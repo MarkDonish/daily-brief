@@ -1,0 +1,2954 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Brief · 2026-05-28</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+:root {
+  /* Palette: warm editorial — inspired by Monocle × Morning Brew */
+  --ink: #1a1a2e;
+  --ink-muted: #6b7280;
+  --ink-light: #9ca3af;
+  --paper: #fafaf9;
+  --paper-card: #ffffff;
+  --accent-ai: #6366f1;        /* indigo — AI section */
+  --accent-startup: #f59e0b;   /* amber — startup */
+  --accent-invest: #10b981;    /* emerald — investment */
+  --accent-tech: #8b5cf6;      /* violet — tech */
+  --border: #e5e7eb;
+  --border-light: #f3f4f6;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.03);
+  --font-serif: 'Noto Serif SC', 'Georgia', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+  --max-w: 960px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #f5f5f4;
+    --ink-muted: #a1a1aa;
+    --ink-light: #71717a;
+    --paper: #0c0a09;
+    --paper-card: #1c1917;
+    --border: #27272a;
+    --border-light: #1f1d1b;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.3);
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Header ── */
+.header {
+  padding: 48px 0 32px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 40px;
+}
+
+.header-brand {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 8px;
+}
+
+.header h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.header-date {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--ink-muted);
+  margin-top: 8px;
+}
+
+.header-stats {
+  display: flex;
+  gap: 24px;
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--ink-light);
+  font-family: var(--font-mono);
+}
+
+.header-stats span { white-space: nowrap; }
+
+/* ── Section ── */
+.section {
+  margin-bottom: 48px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+}
+
+.section-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.section-dot.ai { background: var(--accent-ai); }
+.section-dot.startup { background: var(--accent-startup); }
+.section-dot.invest { background: var(--accent-invest); }
+.section-dot.tech { background: var(--accent-tech); }
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.section-count {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-light);
+  background: var(--border-light);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* ── Cards ── */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card {
+  display: block;
+  background: var(--paper-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  border-color: var(--accent-ai);
+  box-shadow: var(--shadow-sm);
+}
+
+.card--big3 {
+  border-left: 3px solid var(--accent-ai);
+  background: linear-gradient(135deg, rgba(99,102,241,0.03), transparent);
+}
+
+.card--big3.company-openai { border-left-color: #10a37f; }
+.card--big3.company-anthropic { border-left-color: #d4a574; }
+.card--big3.company-google_ai { border-left-color: #4285f4; }
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-light);
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.card-source {
+  background: var(--border-light);
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-big3-tag {
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.card-big3-tag.openai { background: #10a37f15; color: #10a37f; }
+.card-big3-tag.anthropic { background: #d4a57415; color: #c08b5c; }
+.card-big3-tag.google_ai { background: #4285f415; color: #4285f4; }
+
+.card-title {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.card-summary {
+  font-size: 13px;
+  color: var(--ink-muted);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Footer ── */
+.footer {
+  padding: 32px 0;
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-light);
+}
+
+.footer a {
+  color: var(--ink-muted);
+  text-decoration: none;
+}
+
+/* ── Empty state ── */
+.empty {
+  text-align: center;
+  padding: 32px;
+  color: var(--ink-light);
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* ── Nav ── */
+.nav {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nav-pill {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--paper-card);
+  color: var(--ink-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.nav-pill:hover {
+  border-color: var(--accent-ai);
+  color: var(--accent-ai);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .container { padding: 0 16px; }
+  .header { padding: 32px 0 24px; }
+  .header-stats { flex-wrap: wrap; gap: 12px; }
+  .card { padding: 14px 16px; }
+}
+
+/* ── Print ── */
+@media print {
+  body { background: white; }
+  .card:hover { box-shadow: none; }
+  .nav { display: none; }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-brand">Daily Brief</div>
+      <h1>每日资讯 · 2026-05-28</h1>
+      <div class="header-date">03:56 UTC 收集 · 2026-05-28 11:56 生成</div>
+      <div class="header-stats">
+        <span>共 286 条</span>
+        <span>AI 御三家 16 条</span>
+        <span>AI / 人工智能: 19</span>
+    <span>创业 / 商业: 31</span>
+    <span>投资 / 金融市场: 99</span>
+    <span>科技动态: 137</span>
+      </div>
+    </header>
+
+    <nav class="nav">
+      <a href="#ai" class="nav-pill">AI / 人工智能 (19)</a>
+<a href="#startup" class="nav-pill">创业 / 商业 (31)</a>
+<a href="#investment" class="nav-pill">投资 / 金融市场 (99)</a>
+<a href="#tech" class="nav-pill">科技动态 (137)</a>
+
+    </nav>
+
+    
+<section class="section" id="ai">
+  <div class="section-header">
+    <span class="section-dot ai"></span>
+    <h2 class="section-title">AI / 人工智能</h2>
+    <span class="section-count">19</span>
+  </div>
+  <div class="cards">
+    <a href="https://www.theverge.com/policy/937650/ai-alex-bores-openai-anthropic-ny12" target="_blank" rel="noopener" class="card card--big3 company-openai">
+  <div class="card-meta">
+    <span class="card-source">The Verge AI</span>
+    <span class="card-big3-tag openai">OpenAI</span>
+    <span>12h ago</span>
+  </div>
+  <div class="card-title">AI tried to bury this politician — now people have actually heard of him</div>
+  <p class="card-summary">By the time that the Democratic primary for New York's 12th congressional district wraps up in June, Anthropic and OpenAI will have spent millions on their battle over the political future of AI: who gets to regulate it, or who will be punished for trying to regulate it. But the real winner of their</p>
+</a>
+<a href="https://openai.com/index/cisco" target="_blank" rel="noopener" class="card card--big3 company-openai">
+  <div class="card-meta">
+    <span class="card-source">OpenAI Blog</span>
+    <span class="card-big3-tag openai">OpenAI</span>
+    <span>16h ago</span>
+  </div>
+  <div class="card-title">Cisco and OpenAI redefine enterprise engineering with Codex</div>
+  <p class="card-summary">Cisco and OpenAI are redefining enterprise engineering with Codex, helping Cisco scale AI-native development, accelerate AI Defense work, and automate defect remediation.</p>
+</a>
+<a href="https://openai.com/index/building-self-improving-tax-agents-with-codex" target="_blank" rel="noopener" class="card card--big3 company-openai">
+  <div class="card-meta">
+    <span class="card-source">OpenAI Blog</span>
+    <span class="card-big3-tag openai">OpenAI</span>
+    <span>20h ago</span>
+  </div>
+  <div class="card-title">Building self-improving tax agents with Codex</div>
+  <p class="card-summary">See how OpenAI, Thrive, and Crete built a self-improving tax agent with Codex, automating filings, improving accuracy, and accelerating workflows.</p>
+</a>
+<a href="https://openai.com/index/warp" target="_blank" rel="noopener" class="card card--big3 company-openai">
+  <div class="card-meta">
+    <span class="card-source">OpenAI Blog</span>
+    <span class="card-big3-tag openai">OpenAI</span>
+    <span>05/27 00:00</span>
+  </div>
+  <div class="card-title">Warp’s big bet on building open source with GPT-5.5</div>
+  <p class="card-summary">Warp uses GPT-5.5 and OpenAI models to coordinate coding agents across local, cloud, and open-source development workflows.</p>
+</a>
+<a href="https://www.theverge.com/podcast/936445/sundar-pichai-ai-search-google-zero-youtube-web" target="_blank" rel="noopener" class="card card--big3 company-google_ai">
+  <div class="card-meta">
+    <span class="card-source">The Verge AI</span>
+    <span class="card-big3-tag google_ai">Google</span>
+    <span>05/26 14:26</span>
+  </div>
+  <div class="card-title">Sundar Pichai on AI, the future of search, and what’s happening to the web</div>
+  <p class="card-summary">Today, I’m talking with Google and Alphabet CEO Sundar Pichai, in a conversation we recorded just after the Google I/O developer conference. This is the fifth year Sundar and I have sat down after I/O, and it’s become one of my favorite Decoder traditions. There’s always a lot of news at I/O, and th</p>
+</a>
+<a href="https://arstechnica.com/security/2026/05/websites-have-a-new-way-to-spy-on-visitors-analyzing-their-ssd-activity/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Ars Technica AI</span>
+    
+    <span>7h ago</span>
+  </div>
+  <div class="card-title">Websites have a new way to spy on visitors: analyzing their SSD activity</div>
+  <p class="card-summary">Telltale SSD activity can be measured in the browser using simple JavaScript.</p>
+</a>
+<a href="https://huggingface.co/blog/ibm-research/itbench-aa" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Hugging Face Blog</span>
+    
+    <span>10h ago</span>
+  </div>
+  <div class="card-title">ITBench-AA: Frontier Models Score Below 50% on the First Benchmark for Agentic Enterprise IT Tasks — by Artificial Analysis and IBM</div>
+  
+</a>
+<a href="https://www.technologyreview.com/2026/05/27/1138048/the-download-ai-future-ivf-technology/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">MIT Tech Review AI</span>
+    
+    <span>15h ago</span>
+  </div>
+  <div class="card-title">The Download: keeping up with AI, and the future of IVF</div>
+  <p class="card-summary">This is today’s edition of The Download, our weekday newsletter that provides a daily dose of what’s going on in the world of technology. Stay on top of what’s going on in AI this summer Here at MIT Technology Review, we understand exactly how relentless the pace of news from the world of artificial</p>
+</a>
+<a href="https://www.theverge.com/ai-artificial-intelligence/938095/robinhood-ai-agent-stock-trading" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Verge AI</span>
+    
+    <span>13h ago</span>
+  </div>
+  <div class="card-title">Robinhood will let your AI agent trade stocks and make (or lose) lots of money</div>
+  <p class="card-summary">Robinhood is opening its trading platform to AI agents. In an announcement on Wednesday, Robinhood says traders can now create a separate account for an AI agent and add a specific amount of money, allowing the agent to buy and sell stocks across the market. The company pitches the feature as a way </p>
+</a>
+<a href="https://www.theverge.com/tech/937628/coolfly-aura-smart-bird-feeder-review" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Verge AI</span>
+    
+    <span>13h ago</span>
+  </div>
+  <div class="card-title">This smart bird feeder captures more of my backyard drama</div>
+  <p class="card-summary">Since moving to South Carolina's Lowcountry, I've been spellbound by the myriad of beautiful birds that share the coast with us - ospreys raising their babies in towering nests beside the road to my daughter's school, roseate spoonbills wading in the marsh on my morning walks, eagles circling over m</p>
+</a>
+<a href="https://www.theverge.com/ai-artificial-intelligence/937689/new-york-times-tech-guild-ai-monitoring-performance-union-contract" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Verge AI</span>
+    
+    <span>15h ago</span>
+  </div>
+  <div class="card-title">The AI fight brewing inside The New York Times</div>
+  <p class="card-summary">How newsrooms should use AI - or if they should at all - has been a recurrent debate within the media industry over the last several years. Increasingly, these rules are being hammered out at the bargaining table between unions and publishers. Right now, employees at The New York Times are gearing u</p>
+</a>
+<a href="https://www.theverge.com/ai-artificial-intelligence/937933/pope-ai-encyclical-tech-industry-reactions" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Verge AI</span>
+    
+    <span>16h ago</span>
+  </div>
+  <div class="card-title">The Pope isn’t AGI-pilled</div>
+  <p class="card-summary">On Monday, Pope Leo XIV unveiled an encyclical letter addressing the societal implications of artificial intelligence. The letter, titled Magnifica Humanitas, warned that the &quot;use of AI is never a purely technical matter: when it enters processes that affect people's lives, it touches on rights, opp</p>
+</a>
+<a href="https://www.theverge.com/streaming/937915/youtube-ai-labels-shorts-automatic-identification-updates" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Verge AI</span>
+    
+    <span>17h ago</span>
+  </div>
+  <div class="card-title">YouTube is putting AI labels where you’ll actually see them</div>
+  <p class="card-summary">In the wake of Google expanding its AI verification efforts at I/O, YouTube is now finally going to start taking AI labeling seriously. YouTube has announced that it's relocating AI disclosures on Shorts and long-form videos to make them easier to spot and will start automatically identifying and la</p>
+</a>
+<a href="https://www.theverge.com/ai-artificial-intelligence/937801/pope-leo-xiv-magnifica-humanitas-ai-pangram" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Verge AI</span>
+    
+    <span>18h ago</span>
+  </div>
+  <div class="card-title">Did the Pope use AI to write about the dangers of AI?</div>
+  <p class="card-summary">It's possible that AI was used to write parts of Pope Leo XIV's latest encyclical about AI's impact on humanity. An analysis by Linch Zhang posted on the forum LessWrong found certain paragraphs of Magnifica Humanitas to be between 40 percent and 100 percent written by AI, according to the popular A</p>
+</a>
+<a href="https://openai.com/index/election-safeguards-2026" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">OpenAI Blog</span>
+    
+    <span>05/27 00:00</span>
+  </div>
+  <div class="card-title">Election information and safeguards in 2026</div>
+  <p class="card-summary">Ahead of global elections, we’re helping people access information, supporting cyber defenders, and increasing AI transparency</p>
+</a>
+<a href="https://huggingface.co/blog/local-reachy-mini-conversation" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Hugging Face Blog</span>
+    
+    <span>05/27 00:00</span>
+  </div>
+  <div class="card-title">Reachy Mini goes fully local</div>
+  
+</a>
+<a href="https://huggingface.co/blog/delta-weight-sync" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Hugging Face Blog</span>
+    
+    <span>05/27 00:00</span>
+  </div>
+  <div class="card-title">Shipping a Trillion Parameters With a Hub Bucket: Delta Weight Sync in TRL</div>
+  
+</a>
+<a href="https://arstechnica.com/information-technology/2026/05/millions-of-ai-agents-imperiled-by-critical-vulnerability-in-open-source-package/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Ars Technica AI</span>
+    
+    <span>05/26 19:50</span>
+  </div>
+  <div class="card-title">Millions of AI agents imperiled by critical vulnerability in open source package</div>
+  <p class="card-summary">&quot;BadHost&quot; was found in Starlette, a package with 325 million weekly downloads.</p>
+</a>
+<a href="https://www.theverge.com/ai-artificial-intelligence/937059/nobody-wants-to-tell-me-why-they-only-listen-their-own-suno-slop" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Verge AI</span>
+    
+    <span>05/26 12:22</span>
+  </div>
+  <div class="card-title">Nobody wants to tell me why they only listen to their own Suno slop</div>
+  <p class="card-summary">There's this alarming trend in the Suno subreddit. People aren't just prompting AI songs; they're sitting around listening almost exclusively to their own slop. And in some cases, they proudly proclaim that they don't listen to music on traditional streaming platforms anymore - it's just AI all day.</p>
+</a>
+  </div>
+</section>
+<section class="section" id="startup">
+  <div class="section-header">
+    <span class="section-dot startup"></span>
+    <h2 class="section-title">创业 / 商业</h2>
+    <span class="section-count">31</span>
+  </div>
+  <div class="cards">
+    <a href="https://techcrunch.com/2026/05/27/google-engineer-charged-with-insider-trading-after-making-1-2m-on-polymarket/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch</span>
+    
+    <span>3h ago</span>
+  </div>
+  <div class="card-title">Google engineer charged with insider trading after making $1.2M on Polymarket</div>
+  <p class="card-summary">According to the complaint, a Google engineer risked over $2.7 million on wagers related to Google's 2025 Year in Search campaign.</p>
+</a>
+<a href="https://techcrunch.com/2026/05/27/why-googles-ai-cant-spell-google-or-anything-else/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch</span>
+    
+    <span>3h ago</span>
+  </div>
+  <div class="card-title">Why Google’s AI can’t spell Google (or anything else)</div>
+  <p class="card-summary">Google is embarrassing itself, again.</p>
+</a>
+<a href="https://techcrunch.com/2026/05/27/rivian-will-deliver-the-first-r2-suvs-on-june-9/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch</span>
+    
+    <span>6h ago</span>
+  </div>
+  <div class="card-title">Rivian will deliver the first R2 SUVs on June 9</div>
+  <p class="card-summary">The company has finally set a date for the first customer deliveries of what CEO RJ Scaringe has said is &quot;maybe the most important thing we’ve launched to date.&quot;</p>
+</a>
+<a href="https://techcrunch.com/2026/05/27/triomics-nabs-22m-to-bring-oncology-specific-ai-to-cancer-centers/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch</span>
+    
+    <span>6h ago</span>
+  </div>
+  <div class="card-title">Triomics nabs $22M to bring oncology-specific AI to cancer centers</div>
+  <p class="card-summary">The Series B round was led by Battery Ventures.</p>
+</a>
+<a href="https://techcrunch.com/2026/05/27/in-more-good-news-for-amazon-snowflake-signs-6b-deal-with-aws-for-ai-cpu-chips/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch</span>
+    
+    <span>7h ago</span>
+  </div>
+  <div class="card-title">In more good news for Amazon, Snowflake signs $6B deal with AWS for AI CPU chips</div>
+  <p class="card-summary">Snowflake has signed a new, enormous five-year deal with Amazon to secure chips for AI usage. Nvidia is once again being put on notice.</p>
+</a>
+<a href="https://techcrunch.com/2026/05/27/payroll-startup-remote-says-it-grew-revenue-50-per-employee-without-adding-headcount/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch</span>
+    
+    <span>8h ago</span>
+  </div>
+  <div class="card-title">Payroll startup Remote says it grew revenue 50% per employee without adding headcount</div>
+  <p class="card-summary">Payroll service provider Remote recently surpassed $300 million in annual recurring revenue (ARR) and became cash-flow positive, thanks to a 50% increase in revenue per employee resulting from AI adoption.</p>
+</a>
+<a href="https://techcrunch.com/podcast/your-seo-strategy-is-optimized-for-a-search-engine-that-no-longer-exists/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch AI</span>
+    
+    <span>9h ago</span>
+  </div>
+  <div class="card-title">Your SEO strategy is optimized for a search engine that no longer exists.</div>
+  <p class="card-summary">Google I/O made it official: AI-generated answers are now front and center in search, and most brands have almost no visibility into how AI is describing them to their customers. For anyone who has spent years building a strategy around 10 blue links, the rules just changed in a pretty significant w</p>
+</a>
+<a href="https://techcrunch.com/2026/05/27/uk-visa-portal-spilled-thousands-of-applicants-passports-and-selfies-online-and-hasnt-fixed-the-leak/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch</span>
+    
+    <span>9h ago</span>
+  </div>
+  <div class="card-title">UK Visa Portal exposed thousands of applicants’ passports and selfies — then called the lawyers on us</div>
+  <p class="card-summary">The third-party website exposed passports, selfies, and the location data of applicants who submitted their documents as part of the U.K. visa application process. Instead of fixing the issue, the website sent attorneys.</p>
+</a>
+<a href="https://techcrunch.com/2026/05/27/meta-officially-launches-instagram-facebook-and-whatsapp-subscriptions-with-more-to-come-including-ai-plans/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch</span>
+    
+    <span>9h ago</span>
+  </div>
+  <div class="card-title">Meta launches Instagram, Facebook, and WhatsApp subscriptions, with more to come, including AI plans</div>
+  <p class="card-summary">Meta is rolling out paid subscription plans for Instagram, Facebook, and WhatsApp worldwide, while also testing new AI, creator, and business-focused offerings under its broader “Meta One” subscription brand.</p>
+</a>
+<a href="https://techcrunch.com/2026/05/27/with-a-new-100m-raise-princetons-thea-energy-is-now-a-top-funded-fusion-startup/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch</span>
+    
+    <span>10h ago</span>
+  </div>
+  <div class="card-title">With a new $100M raise, Princeton’s Thea Energy is now a top-funded fusion startup</div>
+  <p class="card-summary">Thea Energy's pixel-inspired magnets could give its power plant plans a boost. The fusion startup hopes to get a commercial reactor working by 2034.</p>
+</a>
+<a href="https://news.crunchbase.com/startups/tech-layoffs/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Crunchbase News</span>
+    
+    <span>10h ago</span>
+  </div>
+  <div class="card-title">The Crunchbase Tech Layoffs Tracker</div>
+  <p class="card-summary">Over 127,000 workers at U.S.-based tech companies were laid off in mass job cuts in 2025, per a Crunchbase News tally, and the layoffs have continued into 2026. See the latest companies to cut roles.</p>
+</a>
+<a href="https://techcrunch.com/2026/05/27/crowdstrike-and-google-take-down-botnet-used-by-hackers-to-target-software-developers-in-supply-chain-attacks/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch</span>
+    
+    <span>10h ago</span>
+  </div>
+  <div class="card-title">CrowdStrike and Google take down botnet used by hackers to target open source software developers</div>
+  <p class="card-summary">Cybercriminals used the Glassworm botnet to infect open source software projects with malware, and in turn hack the developers and companies that use that software.</p>
+</a>
+<a href="https://techcrunch.com/2026/05/27/ai-coding-startup-cognition-raises-1b-at-25b-pre-money-valuation/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch</span>
+    
+    <span>11h ago</span>
+  </div>
+  <div class="card-title">AI coding startup Cognition raises $1B at $25B pre-money valuation</div>
+  <p class="card-summary">As Cognition reaches $492 million in annualized revenue run rate, it more than doubled its valuation in eight months, it says.</p>
+</a>
+<a href="https://techcrunch.com/2026/05/27/faa-orders-spacex-to-investigate-starship-v3-booster-failure/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch</span>
+    
+    <span>12h ago</span>
+  </div>
+  <div class="card-title">FAA orders SpaceX to investigate Starship V3 booster failure</div>
+  <p class="card-summary">Starship is grounded until SpaceX finds out why the first V3 booster failed during its first test flight.</p>
+</a>
+<a href="https://techcrunch.com/2026/05/27/startup-battlefield-200-applications-close-today-nominate-a-founder-or-submit-your-startup/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch</span>
+    
+    <span>13h ago</span>
+  </div>
+  <div class="card-title">Startup Battlefield 200 applications close today: Nominate a founder or submit your startup</div>
+  <p class="card-summary">Today is the final day to apply or nominate a startup for Startup Battlefield 200. Once the clock strikes 11:59 p.m. PT, the window closes on your chance to compete for $100,000 in equity-free funding, gain global visibility, connect directly with investors, and launch on the TechCrunch Disrupt stag</p>
+</a>
+<a href="https://techcrunch.com/2026/05/27/elevenlabss-new-music-generation-model-can-switch-genres-mid-track/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch</span>
+    
+    <span>13h ago</span>
+  </div>
+  <div class="card-title">ElevenLabs’ new music-generation model can switch genres mid-track</div>
+  <p class="card-summary">ElevenLabs' new model will let users regenerate a section of a song without affecting the rest of the track.</p>
+</a>
+<a href="https://techcrunch.com/2026/05/27/spotify-now-lets-you-clip-moments-from-your-favorite-podcast/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch</span>
+    
+    <span>13h ago</span>
+  </div>
+  <div class="card-title">Spotify now lets you ‘clip’ moments from your favorite podcast</div>
+  <p class="card-summary">With the new scissors icon, you can clip favorite moments from podcasts and share them with your audience.</p>
+</a>
+<a href="https://news.crunchbase.com/venture/fintech-capchase-b2b-bnpl-200m-debt-equity/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Crunchbase News</span>
+    
+    <span>13h ago</span>
+  </div>
+  <div class="card-title">Exclusive: Capchase, The ‘Affirm for B2B,’ Secures $200M In Debt And Equity</div>
+  <p class="card-summary">Financing startup Capchase has secured a new round of funding, consisting of $26 million in equity and a $174 million credit facility, the company told Crunchbase News exclusively.</p>
+</a>
+<a href="https://techcrunch.com/2026/05/27/sond-a-sleep-tech-startup-from-boses-former-head-of-sleep-exits-stealth-with-7m/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch</span>
+    
+    <span>13h ago</span>
+  </div>
+  <div class="card-title">SOND, a sleep tech startup from Bose’s former head of sleep, exits stealth with $7M</div>
+  <p class="card-summary">SOND introduced its debut product: Dreambuds, a closed-loop, in-ear system that captures 12 physiological signals from the wearer, then acts on them in real time to help consumers get better sleep.</p>
+</a>
+<a href="https://techcrunch.com/2026/05/27/techcrunch-disrupt-2026-early-bird-ticket-savings-end-in-3-days/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch</span>
+    
+    <span>13h ago</span>
+  </div>
+  <div class="card-title">TechCrunch Disrupt 2026 Early Bird ticket savings end in 3 days</div>
+  <p class="card-summary">There are only 3 days left to save up to $410 on your ticket to TechCrunch Disrupt 2026. Early Bird pricing ends May 29 at 11:59 p.m. PT, and once the deadline passes, ticket prices increase. If you plan to attend one of the most influential gatherings in tech this year, now is the time to lock in y</p>
+</a>
+<a href="https://techcrunch.com/video/google-just-broke-seo-heres-what-replaces-it/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch</span>
+    
+    <span>13h ago</span>
+  </div>
+  <div class="card-title">Google just broke SEO. Here’s what replaces it.</div>
+  <p class="card-summary">Google I/O made it official: AI-generated answers are now front and center in search, and most brands have almost no visibility into how AI is describing them to their customers. For anyone who has spent years building a strategy around 10 blue links, the rules just changed in a pretty significant w</p>
+</a>
+<a href="https://techcrunch.com/2026/05/27/china-is-increasingly-keeping-its-best-ai-talent-to-itself/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch</span>
+    
+    <span>14h ago</span>
+  </div>
+  <div class="card-title">China is increasingly keeping its best AI talent to itself</div>
+  <p class="card-summary">China's AI boom is producing world-class talent, and Beijing is increasingly reluctant to let them go elsewhere.</p>
+</a>
+<a href="https://techcrunch.com/2026/05/27/clickhouse-triples-annualized-revenue-to-250m-charting-a-path-toward-an-ipo/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch</span>
+    
+    <span>14h ago</span>
+  </div>
+  <div class="card-title">ClickHouse triples annualized revenue to $250M, charting a path toward an IPO</div>
+  <p class="card-summary">The database provider is eyeing a public debut within the next few years.</p>
+</a>
+<a href="https://techcrunch.com/2026/05/27/youtube-will-now-automatically-label-ai-videos/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch AI</span>
+    
+    <span>14h ago</span>
+  </div>
+  <div class="card-title">YouTube will now automatically label AI videos</div>
+  <p class="card-summary">YouTube will now automatically label videos that use significant photorealistic AI, instead of relying solely on creators to disclose AI-generated content themselves. It's also making AI labels more prominent.</p>
+</a>
+<a href="https://techcrunch.com/2026/05/27/robinhood-now-lets-your-ai-agents-trade-stocks/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch AI</span>
+    
+    <span>15h ago</span>
+  </div>
+  <div class="card-title">Robinhood now lets your AI agents trade stocks</div>
+  <p class="card-summary">While these agents would be able to read and analyze users' portfolios to come up with trading strategies and suggest investments, they'll only be able to access the pre-loaded balance in the dedicated wallet to place orders.</p>
+</a>
+<a href="https://techcrunch.com/2026/05/27/tech-ceos-are-apparently-suffering-from-ai-psychosis/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch AI</span>
+    
+    <span>15h ago</span>
+  </div>
+  <div class="card-title">Tech CEOs are apparently suffering from AI psychosis</div>
+  <p class="card-summary">&quot;CEOs are uniquely prone to AI psychosis,&quot; Box CEO Aaron Levie opines. Maybe that explains the almost religious belief in AI productivity gains.</p>
+</a>
+<a href="https://news.crunchbase.com/venture/logic-behind-vc-bets-uninvestable-sectors-cuvelier-rtp-global/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Crunchbase News</span>
+    
+    <span>16h ago</span>
+  </div>
+  <div class="card-title">The Savvy Logic Behind VC Bets In ‘Uninvestable’ Sectors</div>
+  <p class="card-summary">Historically “uninvestable” sectors are getting more opportunities to bring in funding, creating a rare opportunity for specialized founders and investors to disrupt trillion-dollar industrial markets with vertically integrated, AI-driven software. In this guest commentary, Thomas Cuvelier of RTP Gl</p>
+</a>
+<a href="https://stratechery.com/2026/the-spacex-ipo-and-data-centers-in-space/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Stratechery</span>
+    
+    <span>17h ago</span>
+  </div>
+  <div class="card-title">The SpaceX IPO and Data Centers in Space</div>
+  <p class="card-summary">There isn't a financial model that justifies the SpaceX IPO, but data centers in space are plausible, and that might be enough.</p>
+</a>
+<a href="https://techcrunch.com/2026/05/26/duckduckgo-installs-are-up-30-as-users-reject-being-force-fed-googles-ai-search/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch AI</span>
+    
+    <span>05/26 22:32</span>
+  </div>
+  <div class="card-title">DuckDuckGo installs are up 30% as users reject being ‘force-fed’ Google’s AI Search</div>
+  <p class="card-summary">Google overhauled Search at I/O 2026, replacing blue links with AI agents. The backlash has been swift. DuckDuckGo app installs spiked 30% as users seek a way out.</p>
+</a>
+<a href="https://techcrunch.com/2026/05/26/openrouter-more-than-doubles-valuation-to-1-3b-in-a-year/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch AI</span>
+    
+    <span>05/26 18:33</span>
+  </div>
+  <div class="card-title">OpenRouter more than doubles valuation to $1.3B in a year</div>
+  <p class="card-summary">OpenRouter has raised a $113 million Series B led by CapitalG. Its 5x growth in usage over six months indicates the multi-AI-model future is here.</p>
+</a>
+<a href="https://techcrunch.com/2026/05/26/human-archive-taps-into-indias-services-startups-to-collect-data-for-physical-ai/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">TechCrunch AI</span>
+    
+    <span>05/26 16:00</span>
+  </div>
+  <div class="card-title">This startup is betting India’s gig economy can train the world’s robots</div>
+  <p class="card-summary">Human Archive, a startup founded by UC Berkeley and Stanford researchers, is paying gig workers in India to wear camera-equipped caps and sensor devices to collect the real-world physical training data that AI and robotics labs are racing to acquire.</p>
+</a>
+  </div>
+</section>
+<section class="section" id="investment">
+  <div class="section-header">
+    <span class="section-dot invest"></span>
+    <h2 class="section-title">投资 / 金融市场</h2>
+    <span class="section-count">99</span>
+  </div>
+  <div class="cards">
+    <a href="https://www.coindesk.com/policy/2026/05/27/u-s-cftc-files-request-to-erase-gemini-settlement-that-it-no-longer-considers-fair" target="_blank" rel="noopener" class="card card--big3 company-google_ai">
+  <div class="card-meta">
+    <span class="card-source">CoinDesk</span>
+    <span class="card-big3-tag google_ai">Google</span>
+    <span>2h ago</span>
+  </div>
+  <div class="card-title">U.S. CFTC files request to erase Gemini settlement that it no longer considers fair</div>
+  <p class="card-summary">The regulator went back to analyze the 2022 case and decided that it wouldn't have been pursued under current management and practices.</p>
+</a>
+<a href="https://decrypt.co/369202/deepseek-xiaomi-frontier-ai-cheaper-american-labs-other-way" target="_blank" rel="noopener" class="card card--big3 company-openai">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    <span class="card-big3-tag openai">OpenAI</span>
+    <span>8h ago</span>
+  </div>
+  <div class="card-title">DeepSeek, Xiaomi Just Made Frontier AI 99% Cheaper. American Labs Went the Other Way</div>
+  <p class="card-summary">Back-to-back price cuts from China's top AI labs have made their models a fraction of the cost of GPT-5.5 and Claude Opus.</p>
+</a>
+<a href="https://decrypt.co/369195/openai-foundation-pledges-250-million-ai-economic-disruption" target="_blank" rel="noopener" class="card card--big3 company-openai">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    <span class="card-big3-tag openai">OpenAI</span>
+    <span>10h ago</span>
+  </div>
+  <div class="card-title">OpenAI Foundation Pledges $250 Million to Help Cushion AI's Economic Disruption</div>
+  <p class="card-summary">The philanthropic arm of ChatGPT maker OpenAI will fund research, worker support, and new models for sharing the gains from automation.</p>
+</a>
+<a href="https://decrypt.co/369102/huawei-claw-anything-ai-agent-benchmark" target="_blank" rel="noopener" class="card card--big3 company-openai">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    <span class="card-big3-tag openai">OpenAI</span>
+    <span>12h ago</span>
+  </div>
+  <div class="card-title">Huawei's New Benchmark Gives AI Agents Months of Your Life—Then Watches Them Fail</div>
+  <p class="card-summary">Claw-Anything simulates a real digital existence and asks AI assistants to handle it. GPT-5.5, the best model available, scored 34.5%.</p>
+</a>
+<a href="https://www.ft.com/content/98bb850e-bbcd-40ab-ab07-d08e30f76ed7" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">FT Markets</span>
+    
+    <span>4h ago</span>
+  </div>
+  <div class="card-title">Google engineer charged with insider trading on Polymarket</div>
+  <p class="card-summary">Employee allegedly used account name ‘AlphaRaccoon’ and amassed more than $1mn, charges say</p>
+</a>
+<a href="https://www.theblock.co/post/402806/google-engineer-insider-trading-polymarket?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Block</span>
+    
+    <span>17m ago</span>
+  </div>
+  <div class="card-title">US charges Google engineer with using internal search data to pocket $1.2 million on Polymarket</div>
+  <p class="card-summary">Prosecutors charged Spagnuolo with fraud and money laundering, while the CFTC filed a complaint alleging insider trading violations.</p>
+</a>
+<a href="https://www.theblock.co/post/402800/trump-future-proof-digital-asset?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Block</span>
+    
+    <span>1h ago</span>
+  </div>
+  <div class="card-title">Trump vows to codify ‘future-proof’ digital asset market structure</div>
+  <p class="card-summary">The Clarity Act passed the Senate Banking Committee earlier this month, but analysts have said the legislation faces a complex path forward.</p>
+</a>
+<a href="https://www.coindesk.com/policy/2026/05/27/google-engineer-insider-traded-search-results-on-polymarket-feds-allege" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">CoinDesk</span>
+    
+    <span>5h ago</span>
+  </div>
+  <div class="card-title">Google engineer insider-traded search results on Polymarket, Feds allege</div>
+  <p class="card-summary">The charges mark the second major arrest over insider trading on a prediction market.</p>
+</a>
+<a href="https://www.ft.com/content/c79efc18-7c4f-4ff6-8f12-687892b5bd6f" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">FT Markets</span>
+    
+    <span>6h ago</span>
+  </div>
+  <div class="card-title">Trump says rising economic costs will not force him into Iran deal</div>
+  <p class="card-summary">President’s comments come as hopes of an agreement to end the war push oil prices lower</p>
+</a>
+<a href="https://www.coindesk.com/news-analysis/2026/05/27/crypto-cash-backs-potential-new-allies-in-congress-as-industry-pac-presence-widens" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">CoinDesk</span>
+    
+    <span>6h ago</span>
+  </div>
+  <div class="card-title">The crypto industry’s massive political war chest is starting to lean Republican ahead of midterms</div>
+  <p class="card-summary">As crypto world notches political wins in Texas and beyond, some of its emerging political action committees ditch bipartisan approach for a Republican focus.</p>
+</a>
+<a href="https://decrypt.co/369243/ai-psychosis-chatbots-reality-mental-health-research" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>6h ago</span>
+  </div>
+  <div class="card-title">AI Chatbots Could Quietly Pull Users Away From Reality, Researchers Warn</div>
+  <p class="card-summary">Researchers warn that prolonged chatbot interactions could distort how some users experience reality and social connection.</p>
+</a>
+<a href="https://decrypt.co/369240/how-much-bitcoin-elon-musk-control-spacex-tesla-merge" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>6h ago</span>
+  </div>
+  <div class="card-title">Here's How Much Bitcoin Elon Musk Would Control If SpaceX and Tesla Merge</div>
+  <p class="card-summary">If Tesla and SpaceX merged—as is a reported possibility—then Elon Musk's combined entity would hold billions of dollars' worth of Bitcoin.</p>
+</a>
+<a href="https://decrypt.co/369218/ethereum-traders-increasingly-bearish-etfs-bleed-eth-sinks-near-2000" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>7h ago</span>
+  </div>
+  <div class="card-title">Ethereum Traders Grow Increasingly Bearish as ETFs Bleed, ETH Sinks Near $2,000</div>
+  <p class="card-summary">Predictors on Myriad are losing faith, believing it's more likely that Ethereum dumps to $1,500 before a prospective move up to $3,000.</p>
+</a>
+<a href="https://decrypt.co/369237/elevenlabs-stability-ai-new-music-models-suno" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>7h ago</span>
+  </div>
+  <div class="card-title">ElevenLabs, Stability AI Drop New AI Music Models—Can They Catch Suno?</div>
+  <p class="card-summary">Music v2 brings genre-shifting and section-by-section composition to ElevenLabs. Stable Audio 3.0 ships open weights and six-minute tracks. Is either good enough to dethrone the category leader?</p>
+</a>
+<a href="https://decrypt.co/369220/marvel-comics-icon-stan-lee-revived-ai-tech-again" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>7h ago</span>
+  </div>
+  <div class="card-title">Marvel Comics Icon Stan Lee Has Been 'Revived' With AI Tech—Again</div>
+  <p class="card-summary">ElevenLabs has licensed Stan Lee’s voice and likeness, adding the late Marvel comic creator to a growing market for AI celebrity replicas.</p>
+</a>
+<a href="https://www.coindesk.com/policy/2026/05/27/wall-street-gets-new-crypto-rival-after-texas-bank-completes-regulatory-pivot" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">CoinDesk</span>
+    
+    <span>8h ago</span>
+  </div>
+  <div class="card-title">Wall Street gets new crypto rival after Texas bank completes regulatory pivot</div>
+  <p class="card-summary">By establishing a national charter under the executive branch, United Texas Bank said it intends to enable AI-driven payment rails to intercept global digital dollar volumes.</p>
+</a>
+<a href="https://decrypt.co/369199/cash-app-supports-stablecoins-bitcoin-maxi-jack-dorsey-gatekeeper-gripes" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>9h ago</span>
+  </div>
+  <div class="card-title">Cash App Now Supports Stablecoins, Despite Bitcoin Maxi Jack Dorsey's 'Gatekeeper' Gripes</div>
+  <p class="card-summary">Cash App has begun supporting stablecoin transactions on networks including Ethereum and Solana, pushing past its Bitcoin-based roots.</p>
+</a>
+<a href="https://www.ft.com/content/3ab7df53-af29-4379-8b4a-556e3226dae2" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">FT Markets</span>
+    
+    <span>9h ago</span>
+  </div>
+  <div class="card-title">ExxonMobil wins decisive backing to move corporate domicile to Texas</div>
+  <p class="card-summary">Oil major to relocate incorporation from New Jersey as it seeks to parry investor activism</p>
+</a>
+<a href="https://www.coindesk.com/markets/2026/05/27/elon-musk-could-become-a-top-5-corporate-bitcoin-holder-if-tesla-and-spacex-merge" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">CoinDesk</span>
+    
+    <span>9h ago</span>
+  </div>
+  <div class="card-title">Elon Musk could become a top 5 corporate bitcoin holder if Tesla and SpaceX merge</div>
+  <p class="card-summary">CNBC reported Tuesday that Musk is discussing a merger between Tesla and SpaceX that would tie his tech empire closer together and instantly create the world’s fifth-largest corporate bitcoin treasury, worth $3.3 billion.</p>
+</a>
+<a href="https://www.ft.com/content/f50d27ea-9307-4ff2-8ee1-aca0bf72d068" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">FT Markets</span>
+    
+    <span>9h ago</span>
+  </div>
+  <div class="card-title">US-backed rare earth rivals clash over alleged technology theft</div>
+  <p class="card-summary">Legal battle erupts between mining companies supported by Trump administration to break dependence on China</p>
+</a>
+<a href="https://www.ft.com/content/5d91a37f-cbaa-42ae-b5c5-69ec73b3c1f3" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">FT Markets</span>
+    
+    <span>10h ago</span>
+  </div>
+  <div class="card-title">Uber adds to its Delivery Hero stake at €12bn valuation</div>
+  <p class="card-summary">Share purchase from Aspex Management steps up US ride-hailing group’s pursuit of German food delivery company</p>
+</a>
+<a href="https://decrypt.co/369190/youtube-ai-content-labels-more-prominent-google-pushes-video-remix-tools" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>10h ago</span>
+  </div>
+  <div class="card-title">YouTube Makes AI Content Labels More Prominent as Google Pushes Video Remix Tools</div>
+  <p class="card-summary">YouTube says new disclosure tools and automatic AI detection will help viewers more easily identify AI-generated videos.</p>
+</a>
+<a href="https://decrypt.co/369187/sofi-launches-sofiusd-stablecoin-ethereum-solana" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>10h ago</span>
+  </div>
+  <div class="card-title">SoFi Launches SoFiUSD Stablecoin Across Ethereum and Solana</div>
+  <p class="card-summary">SoFi is making its SoFiUSD token available to members, marking a milestone in the convergence of regulated banking and blockchain.</p>
+</a>
+<a href="https://www.theblock.co/post/402784/cash-app-lets-users-send-usdc-stablecoins-on-chains-like-solana-and-ethereum?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Block</span>
+    
+    <span>6h ago</span>
+  </div>
+  <div class="card-title">Cash App lets users send USDC stablecoins on chains like Solana and Ethereum</div>
+  <p class="card-summary">Cash App users can now transfer on Solana, Ethereum, Polygon and Arbitrum, but executive Miles Suter says the firm is still bitcoin-focused.</p>
+</a>
+<a href="https://www.theblock.co/post/402786/white-house-starts-review-of-cftcs-prediction-markets-rulemaking-as-trump-backs-agency-authority?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Block</span>
+    
+    <span>7h ago</span>
+  </div>
+  <div class="card-title">White House starts review of CFTC’s prediction markets rulemaking as Trump backs agency authority</div>
+  <p class="card-summary">The White House is reviewing proposed prediction market rules as President Trump throws his support behind the CFTC.</p>
+</a>
+<a href="https://www.theblock.co/post/402773/bitcoin-miner-ai-boom-stocks-soaring-cipher-hut-8-fresh-highs?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Block</span>
+    
+    <span>7h ago</span>
+  </div>
+  <div class="card-title">Bitcoin miner-to-AI boom sends stocks soaring as Cipher and Hut 8 hit fresh highs</div>
+  <p class="card-summary">IREN climbed within 10% of a fresh all-time high after unveiling another major AI infrastructure expansion tied to Dell.</p>
+</a>
+<a href="https://www.ft.com/content/a5f5f1c6-9992-4946-b130-a0cffb2d6aca" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">FT Markets</span>
+    
+    <span>11h ago</span>
+  </div>
+  <div class="card-title">Robinhood to let investors use AI chatbots for share trading</div>
+  <p class="card-summary">US brokerage joins ‘arms race’ to give retail investors new tools</p>
+</a>
+<a href="https://www.theblock.co/post/402775/td-cowen-trump-cftc-prediction-markets-post-legal-fight?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Block</span>
+    
+    <span>7h ago</span>
+  </div>
+  <div class="card-title">TD Cowen says Trump’s CFTC prediction markets post unlikely to change legal fight</div>
+  <p class="card-summary">The future of prediction markets will likely be decided by the Supreme Court, while states still appear to hold the advantage, TD Cowen said.</p>
+</a>
+<a href="https://www.coindesk.com/coindesk-indices/2026/05/27/crypto-long-and-short-how-the-genius-act-repriced-bitcoin-s-monetary-premium" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">CoinDesk</span>
+    
+    <span>11h ago</span>
+  </div>
+  <div class="card-title">Crypto Long &amp; Short: How the GENIUS Act repriced bitcoin's monetary premium</div>
+  <p class="card-summary">In this week's Crypto Long &amp; Short, Ravi Tanuku on why the GENIUS Act didn't just regulate stablecoins, it repriced Bitcoin's monetary premium. Then, Jesper Johansen on why looped ETH staking no longer needs a lending market.</p>
+</a>
+<a href="https://www.theblock.co/post/402771/falcon-finance-taps-anchorage-to-issue-new-genius-compliant-payments-stablecoin-fusd?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Block</span>
+    
+    <span>7h ago</span>
+  </div>
+  <div class="card-title">Falcon Finance taps Anchorage to issue new GENIUS-compliant payments stablecoin fUSD</div>
+  <p class="card-summary">Falcon said fUSD is meant to act as a “regulated counterpart” to its existing overcollateralized synthetic stablecoin USDf.</p>
+</a>
+<a href="https://www.ft.com/content/8c580237-c45e-4d11-b0e0-ebb4ef766580" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">FT Markets</span>
+    
+    <span>11h ago</span>
+  </div>
+  <div class="card-title">Et tu too, FTSE Russell?</div>
+  <p class="card-summary">A new telecoms value stock is coming to town</p>
+</a>
+<a href="https://www.coindesk.com/business/2026/05/27/bis-project-finds-tokenization-could-make-cross-border-payments-faster-safer" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">CoinDesk</span>
+    
+    <span>12h ago</span>
+  </div>
+  <div class="card-title">BIS project finds tokenization could make cross-border payments faster, safer</div>
+  <p class="card-summary">Project Agorá, backed by major central banks, will now move toward &quot;real-value&quot; testing to settle tokenized central bank money and bank deposits on blockchain rails.</p>
+</a>
+<a href="https://decrypt.co/369169/kraken-earn-yield-bitcoin-holdings-lending-vaults" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>12h ago</span>
+  </div>
+  <div class="card-title">Kraken Now Lets You Earn Yield on Bitcoin Holdings via Lending Vaults</div>
+  <p class="card-summary">Kraken customers can make use of their Bitcoin holdings and generate BTC yield without ever leaving the exchange.</p>
+</a>
+<a href="https://www.ft.com/content/99ef6efa-9c0c-4886-84df-ed6570f33f2b" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">FT Markets</span>
+    
+    <span>12h ago</span>
+  </div>
+  <div class="card-title">Data centre owner DigitalBridge buys energy PE firm ArcLight for $1bn</div>
+  <p class="card-summary">Tie-up comes as Wall Street heavyweights strike partnerships to uncover new sources of power</p>
+</a>
+<a href="https://www.coindesk.com/markets/2026/05/27/crypto-ipos-could-create-massive-usd1-trillion-market-amid-tokenization-wave-jefferies-says" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">CoinDesk</span>
+    
+    <span>12h ago</span>
+  </div>
+  <div class="card-title">Crypto IPOs could create massive $1 trillion market amid tokenization wave, Jefferies says</div>
+  <p class="card-summary">The Wall Street investment bank expects a wave of crypto and blockchain public listings over the next two years as institutional investors shift their focus from speculative trading to real-world financial infrastructure.</p>
+</a>
+<a href="https://decrypt.co/369158/mastercard-secures-new-york-bitlicense-stablecoins-tokenized-deposits" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>12h ago</span>
+  </div>
+  <div class="card-title">Mastercard Secures New York BitLicense in Push for Stablecoins, Tokenized Deposits</div>
+  <p class="card-summary">Mastercard has secured a highly coveted BitLicense in New York, anchoring its compliance-first strategy for stablecoins on Wall Street.</p>
+</a>
+<a href="https://www.ft.com/content/f0e7c9f8-2e98-42d7-b4f7-dae94429439f" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">FT Markets</span>
+    
+    <span>13h ago</span>
+  </div>
+  <div class="card-title">Securitisation could help plug Europe’s funding gap</div>
+  <p class="card-summary">Deeper capital markets are essential to the continent’s growth</p>
+</a>
+<a href="https://www.coindesk.com/business/2026/05/27/block-kicks-off-cash-app-s-phased-stablecoin-roll-out-to-its-nearly-60-million-users" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">CoinDesk</span>
+    
+    <span>13h ago</span>
+  </div>
+  <div class="card-title">Block kicks off Cash App’s phased stablecoin roll out to its nearly 60 million users</div>
+  <p class="card-summary">An individual familiar with the matter told CoinDesk the stablecoin feature was rolled out to 25% of users already and by the end of the week, all users will have access.</p>
+</a>
+<a href="https://www.coindesk.com/opinion/2026/05/27/a-bipartisan-bridge-to-the-future-why-the-senate-must-finish-the-job-on-digital-assets" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">CoinDesk</span>
+    
+    <span>13h ago</span>
+  </div>
+  <div class="card-title">A bipartisan bridge to the future: Why the Senate must finish the job on digital Assets</div>
+  <p class="card-summary">The Clarity Act’s recent markup proved that the momentum for regulation is there. It is imperative that Congress move the bill forward to establish rules this generation needs and a framework the next will inherit, urges Kim.</p>
+</a>
+<a href="https://www.coindesk.com/markets/2026/05/27/robinhood-is-letting-ai-trade-for-you-so-you-don-t-have-to-keep-checking-the-markets" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">CoinDesk</span>
+    
+    <span>13h ago</span>
+  </div>
+  <div class="card-title">Robinhood is letting AI trade for you so you don't have to keep checking the markets</div>
+  <p class="card-summary">Robinhood is bringing hedge fund-style automation to everyday investors by letting AI agents build portfolios, execute stock trades, and even go shopping using virtual credit cards.</p>
+</a>
+<a href="https://www.coindesk.com/business/2026/05/27/dtcc-plans-to-bring-tokenized-assets-to-stellar-in-latest-wall-street-blockchain-push" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">CoinDesk</span>
+    
+    <span>13h ago</span>
+  </div>
+  <div class="card-title">DTCC plans to bring tokenized assets to Stellar in latest Wall Street blockchain push</div>
+  <p class="card-summary">The U.S. market infrastructure giant targets connecting tokenized stocks, ETFs and Treasuries to Stellar in the first half of 2027.</p>
+</a>
+<a href="https://www.coindesk.com/markets/2026/05/27/crypto-s-biggest-exchanges-back-push-for-token-disclosure-standards-as-industry-courts-institutional-capital" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">CoinDesk</span>
+    
+    <span>13h ago</span>
+  </div>
+  <div class="card-title">Crypto’s biggest exchanges back push for token disclosure standards as industry courts institutional capital</div>
+  <p class="card-summary">More than 40 crypto firms, including rival exchanges Coinbase and Kraken, are backing a Blockworks-led framework aimed at bringing stock market-style disclosures to token markets.</p>
+</a>
+<a href="https://www.ft.com/content/c667ae01-718d-4f1e-a3bd-b2477d74c33e" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">FT Markets</span>
+    
+    <span>14h ago</span>
+  </div>
+  <div class="card-title">Central banks complete successful tests of cross-border blockchain payments</div>
+  <p class="card-summary">Prototype, backed by Federal Reserve Bank of New York and BoE, allows near-instantaneous settlement of payments</p>
+</a>
+<a href="https://www.coindesk.com/business/2026/05/27/banca-sella-gets-green-light-to-provide-crypto-services-to-customers-first-in-italy" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">CoinDesk</span>
+    
+    <span>14h ago</span>
+  </div>
+  <div class="card-title">Banca Sella gets green light to provide crypto services to customers in Italian first</div>
+  <p class="card-summary">The fintech-forward private bank said it is the first Italian lender to get Bank of Italy approval under MiCA to offer digital asset custody and transfers.</p>
+</a>
+<a href="https://decrypt.co/369153/robinhood-opens-platform-ai-agents-stock-trading-credit-card-spending" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>14h ago</span>
+  </div>
+  <div class="card-title">Robinhood Opens Platform to AI Agents for Stock Trading and Credit Card Spending</div>
+  <p class="card-summary">Retail brokerage Robinhood now lets users delegate stock purchases and credit card transactions to third-party AI systems.</p>
+</a>
+<a href="https://www.coindesk.com/business/2026/05/27/major-crypto-exchanges-increase-transfer-scrutiny-with-htx-over-uk-sanctions" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">CoinDesk</span>
+    
+    <span>14h ago</span>
+  </div>
+  <div class="card-title">Major crypto exchanges increase transfer scrutiny with HTX over UK sanctions</div>
+  <p class="card-summary">The UK sanctioned crypto exchange HTX due to alleged ties to Russian sanctions evasion networks and illicit financial activity.</p>
+</a>
+<a href="https://www.coindesk.com/coindesk-indices/2026/05/27/coindesk-20-performance-update-internet-computer-icp-jumps-9-8" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">CoinDesk</span>
+    
+    <span>14h ago</span>
+  </div>
+  <div class="card-title">CoinDesk 20 performance update: Internet Computer (ICP) Jumps 9.8%</div>
+  <p class="card-summary">Stellar (XLM), up 1.7%, joined Internet Computer (ICP) as a top performer.</p>
+</a>
+<a href="https://www.coindesk.com/business/2026/05/27/mastercard-secures-new-york-bitlicense-to-support-stablecoin-and-digital-payment-infrastructure" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">CoinDesk</span>
+    
+    <span>14h ago</span>
+  </div>
+  <div class="card-title">Mastercard secures New York BitLicense to support stablecoin and digital payment infrastructure</div>
+  <p class="card-summary">The payments giant said the approval supports its push into stablecoins and blockchain-based settlement infrastructure.</p>
+</a>
+<a href="https://decrypt.co/369134/solana-meme-coin-surges-6000-after-creators-arrested-over-rug-pull" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>14h ago</span>
+  </div>
+  <div class="card-title">Solana Meme Coin Surges 6,000% After Creators Arrested Over 'Rug Pull'</div>
+  <p class="card-summary">The charges against the CatFi creators mark the first time South Korean prosecutors have applied the new Virtual Asset User Protection Act.</p>
+</a>
+<a href="https://www.coindesk.com/business/2026/05/27/solana-dex-orca-launches-new-marketplace-for-tokenized-real-world-assets" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">CoinDesk</span>
+    
+    <span>14h ago</span>
+  </div>
+  <div class="card-title">Solana DEX Orca launches new marketplace for tokenized real-world assets</div>
+  <p class="card-summary">The launch comes as crypto companies increasingly focus on tokenizing traditional financial assets, a market many in the industry see as a major growth opportunity.</p>
+</a>
+<a href="https://www.coindesk.com/markets/2026/05/27/live-markets-bitcoin-remains-under-pressure-as-korea-s-sk-hynix-joins-micron-in-usd1-trillion-club" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">CoinDesk</span>
+    
+    <span>15h ago</span>
+  </div>
+  <div class="card-title">Live markets: bitcoin slides to new monthly low below $75,000 on report of strikes against Iran</div>
+  <p class="card-summary">Memory chip stocks are attracting capital and attention, with crypto markets settling into apathy.</p>
+</a>
+<a href="https://decrypt.co/369129/morning-minute-dark-pool-trader-dumps-1-3b-in-ibit-in-single-clip" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>15h ago</span>
+  </div>
+  <div class="card-title">Morning Minute: Dark Pool Trader Dumps $1.3B in IBIT in Single Clip</div>
+  <p class="card-summary">Strategy is paying down its debt instead of buying Bitcoin, and AI tokens are now massively outperforming BTC.</p>
+</a>
+<a href="https://www.coindesk.com/markets/2026/05/27/bitcoin-etf-accumulation-flattens-to-just-4-500-btc-year-to-date-as-may-flips-to-outflows" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">CoinDesk</span>
+    
+    <span>15h ago</span>
+  </div>
+  <div class="card-title">Bitcoin gauge tracking selling pressure moves into 'high-risk' zone as ETF demand slumps</div>
+  <p class="card-summary">U.S. spot bitcoin ETFs have accumulated a net 4,500 BTC since the start of 2026, with May reversing the buying pattern that built through March and April, per Swissblock data.</p>
+</a>
+<a href="https://www.ft.com/content/002d15f9-b3cb-46c8-85a8-24864ef99cda" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">FT Markets</span>
+    
+    <span>15h ago</span>
+  </div>
+  <div class="card-title">The politics of unrealistic numbers</div>
+  <p class="card-summary">How to spot a load-bearing “up to”</p>
+</a>
+<a href="https://www.theblock.co/post/402751/kraken-expands-earn-suite-bitcoin-vault-paying-yield-btc-holdings?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Block</span>
+    
+    <span>11h ago</span>
+  </div>
+  <div class="card-title">Kraken expands Earn suite with Bitcoin Vault paying yield on BTC holdings</div>
+  <p class="card-summary">Bitcoin Vault routes deposits into DeFi lending protocols, including Aave and Morpho, to generate BTC rewards.</p>
+</a>
+<a href="https://decrypt.co/369128/trump-backs-cftc-over-prediction-markets-calls-state-officials-scum" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>15h ago</span>
+  </div>
+  <div class="card-title">Trump Backs CFTC Over Prediction Markets, Calls State Officials ‘Scum’</div>
+  <p class="card-summary">Federal oversight gains the president’s backing as states push to bring prediction markets under their own gambling laws.</p>
+</a>
+<a href="https://www.theblock.co/post/402745/aztec-labs-acquires-zkpassport-keep-privacy-protocol-ios-mobile-app-open-source?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Block</span>
+    
+    <span>11h ago</span>
+  </div>
+  <div class="card-title">Aztec Labs acquires ZKPassport, pledges to keep privacy protocol and iOS mobile app open-source</div>
+  <p class="card-summary">The Obsidion team, including co-founders Michael Elliot and Theo Madzou, will join Aztec Labs to continue developing ZKPassport.</p>
+</a>
+<a href="https://www.coindesk.com/tech/2026/05/26/kraken-unveils-bitcoin-vault-expanding-yield-push-for-btc-holders" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">CoinDesk</span>
+    
+    <span>15h ago</span>
+  </div>
+  <div class="card-title">Kraken unveils Bitcoin Vault, expanding yield push for BTC holders</div>
+  <p class="card-summary">The new earn product lets users generate BTC-denominated rewards through DeFi strategies while keeping exposure to bitcoin’s price.</p>
+</a>
+<a href="https://www.coindesk.com/policy/2026/05/27/singapore-charges-former-hodlnaut-ceo-zhu-juntao-over-terra-collapse-claims" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">CoinDesk</span>
+    
+    <span>16h ago</span>
+  </div>
+  <div class="card-title">Singapore charges former Hodlnaut CEO Zhu Juntao over Terra collapse claims</div>
+  <p class="card-summary">Zhu allegedly directed staff to publish false claims that Hodlnaut had no direct exposure to the TerraUSD collapse on Telegram and in customer emails.</p>
+</a>
+<a href="https://www.coindesk.com/daybook-us/2026/05/27/traders-once-again-prefer-dollars-over-bitcoin-usdt-usdc-dominance-rises" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">CoinDesk</span>
+    
+    <span>16h ago</span>
+  </div>
+  <div class="card-title">Crypto participants once again prefer dollars over bitcoin. USDT, USDC dominance rises.</div>
+  <p class="card-summary">Your day-ahead look for May 27, 2026</p>
+</a>
+<a href="https://www.theblock.co/post/402638/tokenized-pokemon-card-marketplaces-record-7-4-million-hype-peaks-30th-anniversary?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Block</span>
+    
+    <span>12h ago</span>
+  </div>
+  <div class="card-title">Tokenized Pokémon card marketplaces hit record $7.4 million as hype peaks ahead of 30th anniversary</div>
+  <p class="card-summary">On-chain Pokémon card revenue has surged 337% as 30th-anniversary mania lifts tokenized markets.</p>
+</a>
+<a href="https://decrypt.co/369125/1-3b-worth-of-blackrocks-ibit-changes-hands-in-dark-pool-sale" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>16h ago</span>
+  </div>
+  <div class="card-title">$1.3B Worth of BlackRock's IBIT Changes Hands in Dark Pool Sale</div>
+  <p class="card-summary">A $1.3 billion off-exchange IBIT block sale shook Bitcoin Tuesday, but experts say the real test is yet to come.</p>
+</a>
+<a href="https://www.ft.com/content/88ec90e1-2927-4cb0-afbf-2df1ca6d53fa" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">FT Markets</span>
+    
+    <span>16h ago</span>
+  </div>
+  <div class="card-title">Trump risks triggering financial crisis, warns ECB</div>
+  <p class="card-summary">Vice-president Luis de Guindos says Washington’s volatile trade policies and reduced co-operation also threaten stability</p>
+</a>
+<a href="https://www.coindesk.com/business/2026/05/27/sofi-brings-bank-issued-stablecoin-to-15-million-users-in-crypto-push" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">CoinDesk</span>
+    
+    <span>16h ago</span>
+  </div>
+  <div class="card-title">SoFi brings bank-issued stablecoin to 15 million users in crypto push</div>
+  <p class="card-summary">The fintech platform says its dollar-backed stablecoin will let members trade, transfer and eventually earn yield through its banking app.</p>
+</a>
+<a href="https://www.coindesk.com/markets/2026/05/27/bitcoin-clings-to-usd75-000-support-as-bear-market-signals-resurface" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">CoinDesk</span>
+    
+    <span>17h ago</span>
+  </div>
+  <div class="card-title">Bitcoin clings to $75,000 support as bear market signals resurface</div>
+  <p class="card-summary">Bitcoin hovered below Tom Lee's $76,000 bull-market threshold while hyperliquid and monero bucked broader crypto weakness.</p>
+</a>
+<a href="https://www.theblock.co/post/402730/bitdeer-taps-former-corsair-gaming-and-semiconductor-exec-michael-potter-as-cfo?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Block</span>
+    
+    <span>13h ago</span>
+  </div>
+  <div class="card-title">Bitdeer taps former Corsair Gaming and semiconductor exec Michael Potter as CFO</div>
+  <p class="card-summary">Bitdeer will retain Jianchun Liu as a principal advisor and said the resignation was due to personal reasons.</p>
+</a>
+<a href="https://www.theblock.co/post/402732/mastercard-secures-new-york-state-bitlicense-as-it-continues-to-expand-crypto-services?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Block</span>
+    
+    <span>13h ago</span>
+  </div>
+  <div class="card-title">Mastercard secures New York State BitLicense as it continues to expand crypto services</div>
+  <p class="card-summary">New York has now officially granted three Virtual Currency Business Activity Licenses (aka BitLicenses) in 2026.</p>
+</a>
+<a href="https://www.theblock.co/post/402729/robinhood-ai-powered-crypto-trading-launching-agentic-stock-trading-beta?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Block</span>
+    
+    <span>13h ago</span>
+  </div>
+  <div class="card-title">Robinhood says AI-powered crypto trading coming after launching agentic stock trading beta</div>
+  <p class="card-summary">The popular retail-focused trading platform is kicking off its agentic trading initiative with a beta launch limited to equities.</p>
+</a>
+<a href="https://www.theblock.co/post/402726/circle-partners-with-nium-to-connect-usdc-settlement-to-global-payout-rails?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Block</span>
+    
+    <span>14h ago</span>
+  </div>
+  <div class="card-title">Circle partners with Nium to connect USDC settlement to global payout rails</div>
+  <p class="card-summary">Circle and Nium have partnered to connect stablecoin settlement with global payout rails across more than 190 countries and 100 currencies.</p>
+</a>
+<a href="https://www.ft.com/content/080db498-9e03-456f-a6e2-dae19f73552c" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">FT Markets</span>
+    
+    <span>20h ago</span>
+  </div>
+  <div class="card-title">UK household energy bills to rise by 13% from July to two-year high</div>
+  <p class="card-summary">Ofgem’s cap increase means annual costs will increase to £1,862</p>
+</a>
+<a href="https://www.theblock.co/post/402719/security-researchers-flag-ongoing-stakedao-exploit-vsdcrv?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Block</span>
+    
+    <span>16h ago</span>
+  </div>
+  <div class="card-title">Security researchers flag ongoing Stake DAO exploit after attacker mints trillions of vsdCRV</div>
+  <p class="card-summary">The attacker minted 5.4 trillion vsdCRV on Arbitrum and is actively swapping tokens for ether, the researchers said.</p>
+</a>
+<a href="https://www.theblock.co/post/402361/sofi-rolls-out-sofiusd-stablecoin-to-banking-app-users?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Block</span>
+    
+    <span>16h ago</span>
+  </div>
+  <div class="card-title">SoFi rolls out SoFiUSD stablecoin to banking app users</div>
+  <p class="card-summary">SoFi rolls out bank-issued SoFiUSD stablecoin to 14.7 million members inside its app on Ethereum and Solana.</p>
+</a>
+<a href="https://www.theblock.co/post/402716/coinbase-standard-chartered-multi-currency-funding-rails?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Block</span>
+    
+    <span>17h ago</span>
+  </div>
+  <div class="card-title">Coinbase taps Standard Chartered to expand multi-currency funding rails for institutional clients</div>
+  <p class="card-summary">Coinbase also relaunched Direct Deposit for U.S. customers, allowing users to automatically allocate a portion of their paycheck to crypto.</p>
+</a>
+<a href="https://www.theblock.co/post/402711/singapore-charges-hodlnaut-former-ceo?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Block</span>
+    
+    <span>17h ago</span>
+  </div>
+  <div class="card-title">Singapore charges ex-Hodlnaut CEO over allegedly misleading claims tied to Terra collapse, faces up to 20 years in prison</div>
+  <p class="card-summary">Authorities alleged that the former CEO distributed claims stating that the company had not been impacted by the 2022 collapse of TerraUSD.</p>
+</a>
+<a href="https://www.ft.com/content/88702665-c3ed-4c29-82ba-0d7ce1eba8cd" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">FT Markets</span>
+    
+    <span>21h ago</span>
+  </div>
+  <div class="card-title">Inside BP’s boardroom ‘bullying’ scandal</div>
+  <p class="card-summary">Albert Manifold’s behaviour and use of personal devices cited as factors in removal that has piled pressure on CEO Meg O’Neill</p>
+</a>
+<a href="https://www.theblock.co/post/402707/bitcoin-etf-outflows-ibit-whale-trade?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Block</span>
+    
+    <span>18h ago</span>
+  </div>
+  <div class="card-title">Spot bitcoin ETFs continue outflow streak amid $1.3 billion IBIT whale trade</div>
+  <p class="card-summary">Bitcoin ETFs saw $334 million in net outflows on Tuesday, driven by $192 million exiting BlackRock's IBIT.</p>
+</a>
+<a href="https://www.ft.com/content/c532aac6-e13a-4e0f-bfe0-8418db1ed7fb" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">FT Markets</span>
+    
+    <span>22h ago</span>
+  </div>
+  <div class="card-title">AI’s mixed economic signals</div>
+  <p class="card-summary">Plus, the euro convergence trade</p>
+</a>
+<a href="https://www.theblock.co/post/402697/south-korea-first-rugpull-memecoin?utm_source=rss&amp;utm_medium=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Block</span>
+    
+    <span>18h ago</span>
+  </div>
+  <div class="card-title">South Korea arrests suspects behind Solana memecoin CatFi in first rugpull case under new law</div>
+  <p class="card-summary">By using fake social media channels, the suspects allegedly lured thousands into buying Solana memecoin CatFi, before abandoning the project.</p>
+</a>
+<a href="https://www.ft.com/content/4eed284f-d78e-48cb-b865-c49e73dbada0" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">FT Markets</span>
+    
+    <span>23h ago</span>
+  </div>
+  <div class="card-title">Bullying problem? The battle inside BP’s boardroom</div>
+  <p class="card-summary">With the ousting of Albert Manifold, BP has replaced two chief executives and two chairs in the past three years</p>
+</a>
+<a href="https://www.ft.com/content/2addf5f8-56de-42f9-834e-14024f0139d7" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">FT Markets</span>
+    
+    <span>23h ago</span>
+  </div>
+  <div class="card-title">UK software investor Hg strikes first buyout deal since SaaSpocalypse</div>
+  <p class="card-summary">Acquisition of rights and royalties management company for $500mn comes after plunge in software stocks</p>
+</a>
+<a href="https://www.ft.com/content/2fdbb11e-8c8d-41ae-a585-06d921ae7a53" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">FT Markets</span>
+    
+    <span>23h ago</span>
+  </div>
+  <div class="card-title">How some blockchains enable front-running</div>
+  <p class="card-summary">Regulators need to tackle the issue and address the cost to investors of excessive transparency</p>
+</a>
+<a href="https://www.ft.com/content/372925fb-1701-44fc-a1f2-6b8213bafe28" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">FT Markets</span>
+    
+    <span>23h ago</span>
+  </div>
+  <div class="card-title">Eurozone issuers turn to non-euro debt in hunt for new investors</div>
+  <p class="card-summary">Sovereign borrowers look to issuance in US dollars, Swiss francs and other currencies</p>
+</a>
+<a href="https://www.ft.com/content/d293ff5e-462f-43d1-a2e0-b144caa52203" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">FT Markets</span>
+    
+    <span>05/26 22:49</span>
+  </div>
+  <div class="card-title">BP removes chair Albert Manifold after claims of bullying</div>
+  <p class="card-summary">Hands-on approach was viewed as aggressive by several colleagues at UK oil major</p>
+</a>
+<a href="https://www.ft.com/content/704c7605-e0ac-4ce1-b24b-ba85359a757f" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">FT Markets</span>
+    
+    <span>05/26 22:41</span>
+  </div>
+  <div class="card-title">UK imposes sanctions on crypto exchange tied to billionaire Justin Sun</div>
+  <p class="card-summary">Foreign Office announces measures against Huobi among several entities it says helped Russia evade economic pressure</p>
+</a>
+<a href="https://www.ft.com/content/e63db59c-ed38-4930-b320-3b2481bf8e60" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">FT Markets</span>
+    
+    <span>05/26 22:00</span>
+  </div>
+  <div class="card-title">BP removes chair Albert Manifold after claims of bullying</div>
+  <p class="card-summary">Hands-on approach was viewed as aggressive by several colleagues at UK oil major</p>
+</a>
+<a href="https://decrypt.co/369121/non-enhanced-athletes-beat-juiced-rivals-steroid-olympics" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>05/26 21:53</span>
+  </div>
+  <div class="card-title">Some Non-Enhanced Athletes Beat Their Juiced Rivals at the 'Steroid Olympics'</div>
+  <p class="card-summary">The inaugural games produced a record-breaking swim, but several non-enhanced athletes still beat the enhanced competitors.</p>
+</a>
+<a href="https://decrypt.co/369099/someone-burned-8-million-bitcoin-destroyed-why" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>05/26 21:19</span>
+  </div>
+  <div class="card-title">Someone Just Destroyed $8.2 Million in Bitcoin—Why?</div>
+  <p class="card-summary">Five unknown addresses removed 107 Bitcoin worth $8.2 million from circulation today, sparking intrigue on social media.</p>
+</a>
+<a href="https://decrypt.co/369068/openbmb-minicpm5-half-gigabyte-ai-model-local-agents-phone" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>05/26 20:59</span>
+  </div>
+  <div class="card-title">This Half-Gigabyte AI Model Runs Local Agents on Your Phone</div>
+  <p class="card-summary">OpenBMB's 1B-parameter model brings MCP support and agentic tool use to on-device AI—but it has trouble with logic traps.</p>
+</a>
+<a href="https://decrypt.co/369095/ethereum-sharplink-solana-forward-industries-russell-2000-3000" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>05/26 20:40</span>
+  </div>
+  <div class="card-title">Ethereum Firm Sharplink, Solana Treasury Forward Industries Joining Russell 2000, 3000 Indexes</div>
+  <p class="card-summary">Crypto treasury firms Sharplink and Forward Industries will both be included in the Russell 2000 and 3000 indexes at the end of June.</p>
+</a>
+<a href="https://www.ft.com/content/a401b0c0-fcc0-4bae-9f57-e8d5c0957a70" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">FT Markets</span>
+    
+    <span>05/26 20:00</span>
+  </div>
+  <div class="card-title">SpaceX nears lift-off</div>
+  <p class="card-summary">An IPO so big it could change the Nasdaq</p>
+</a>
+<a href="https://decrypt.co/369064/grand-theft-data-threat-actors-weaponizing-gta-6-hype-nordvpn-warns" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>05/26 19:57</span>
+  </div>
+  <div class="card-title">Grand Theft Data: Threat Actors Weaponizing GTA 6 Hype, NordVPN Warns</div>
+  <p class="card-summary">Cybercriminals are weaponizing the hype surrounding Grand Theft Auto 6, flooding the internet with GTA phishing traps and malware.</p>
+</a>
+<a href="https://decrypt.co/369043/spain-blocks-prediction-markets-kalshi-polymarket-potential-violations" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>05/26 19:14</span>
+  </div>
+  <div class="card-title">Spain Blocks Prediction Markets Kalshi, Polymarket for Potential Gambling Law Violations</div>
+  <p class="card-summary">Spain is the latest country to clamp down on the rising use of prediction market platforms like Polymarket and Kalshi.</p>
+</a>
+<a href="https://decrypt.co/369045/ai-chatbots-claude-chatgpt-bias-catholicism-pope-leo" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>05/26 18:59</span>
+  </div>
+  <div class="card-title">AI Chatbots Show Bias Toward Catholicism, Researchers Say</div>
+  <p class="card-summary">Researchers find AI models steer users toward Catholicism and away from other religions, like Jehovah’s Witnesses.</p>
+</a>
+<a href="https://decrypt.co/369053/terawulf-bitcoin-miner-kentucky-site-ai-power-demands" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>05/26 18:23</span>
+  </div>
+  <div class="card-title">TeraWulf Stock Pops as Bitcoin Miner Acquires Kentucky Site to Meet AI Power Demands</div>
+  <p class="card-summary">Bitcoin miner TeraWulf’s latest deal adds more than a gigawatt of potential data center capacity in a region eager for economic investment.</p>
+</a>
+<a href="https://decrypt.co/369042/inaudible-audio-attacks-hijack-ai-voice-models" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>05/26 18:17</span>
+  </div>
+  <div class="card-title">Inaudible Audio Attacks Can Hijack AI Voice Models, Study Finds</div>
+  <p class="card-summary">Researchers were able to embed hidden signals in audio clips that silently commandeer AI model behavior.</p>
+</a>
+<a href="https://decrypt.co/369047/uk-issues-sanctions-against-justin-sun-htx-crypto-firms-russia-ties" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>05/26 18:15</span>
+  </div>
+  <div class="card-title">UK Issues Sanctions Against Justin Sun's HTX, Other Crypto Firms Over Alleged Russia Ties</div>
+  <p class="card-summary">British financial institutions are now barred from doing business with the exchanges—and may face penalties for interacting with crypto transactions that pass through them.</p>
+</a>
+<a href="https://www.ft.com/content/95415dfc-904e-4ce5-a457-f50041c07ec9" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">FT Markets</span>
+    
+    <span>05/26 17:17</span>
+  </div>
+  <div class="card-title">Chipmaker ETF rides AI excitement to quickest $10bn valuation on record</div>
+  <p class="card-summary">Roundhill Memory ETF, known as DRAM, surges 87% within 50 days of April launch</p>
+</a>
+<a href="https://www.ft.com/content/1f53a603-34ee-453c-a3a6-f7eca164679a" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">FT Markets</span>
+    
+    <span>05/26 16:59</span>
+  </div>
+  <div class="card-title">BP is deeply dysfunctional, but it could be worse</div>
+  <p class="card-summary">Investors should be concerned by Manifold’s ousting, but better to fire too many executives than too few</p>
+</a>
+<a href="https://decrypt.co/369011/tom-lee-bitmine-makes-biggest-ethereum-buy-2026" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Decrypt</span>
+    
+    <span>05/26 15:56</span>
+  </div>
+  <div class="card-title">Tom Lee's BitMine Makes Biggest Ethereum Buy Yet in 2026</div>
+  <p class="card-summary">BitMine Immersion Technologies made its largest Ethereum acquisition yet this year—just weeks after saying it might slow down its ETH buys.</p>
+</a>
+  </div>
+</section>
+<section class="section" id="tech">
+  <div class="section-header">
+    <span class="section-dot tech"></span>
+    <h2 class="section-title">科技动态</h2>
+    <span class="section-count">137</span>
+  </div>
+  <div class="cards">
+    <a href="https://www.wired.com/story/illinois-pass-major-ai-safety-law-pritzker/" target="_blank" rel="noopener" class="card card--big3 company-openai">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    <span class="card-big3-tag openai">OpenAI</span>
+    <span>3h ago</span>
+  </div>
+  <div class="card-title">Illinois Lawmakers Just Passed America’s Strongest AI Safety Bill</div>
+  <p class="card-summary">The bill requires companies like OpenAI, Anthropic, and Google to have third parties confirm they’re following safety standards. Illinois governor JB Pritzker says he’ll sign it.</p>
+</a>
+<a href="https://36kr.com/newsflashes/3828334727893633?f=rss" target="_blank" rel="noopener" class="card card--big3 company-google_ai">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    <span class="card-big3-tag google_ai">Google</span>
+    <span></span>
+  </div>
+  <div class="card-title">美国监管机构正着手撤销对温克莱沃斯兄弟旗下加密交易所的500万美元罚款</div>
+  <p class="card-summary">美国商品期货交易委员会（CFTC）周三请求法官撤销该机构对一家加密货币交易所开出的500万美元罚款，该交易所由一对双胞胎兄弟创立，他们曾向特朗普2024年竞选活动捐款。CFTC表示，监管机构本不该指控泰勒和卡梅伦·温克莱沃斯兄弟旗下的Gemini信托公司，称其在比特币期货业务中存在虚假陈述。（新浪财经）</p>
+</a>
+<a href="https://simonwillison.net/2026/May/27/product-market-fit/" target="_blank" rel="noopener" class="card card--big3 company-openai">
+  <div class="card-meta">
+    <span class="card-source">Hacker News (Best)</span>
+    <span class="card-big3-tag openai">OpenAI</span>
+    <span>11h ago</span>
+  </div>
+  <div class="card-title">I think Anthropic and OpenAI have found product-market fit</div>
+  <p class="card-summary">Article URL: https://simonwillison.net/2026/May/27/product-market-fit/ Comments URL: https://news.ycombinator.com/item?id=48296794 Points: 696 # Comments: 867</p>
+</a>
+<a href="https://9to5mac.com/2026/05/27/openai-investigating-elevated-latency-issue-affecting-chatgpt/" target="_blank" rel="noopener" class="card card--big3 company-openai">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    <span class="card-big3-tag openai">OpenAI</span>
+    <span>12h ago</span>
+  </div>
+  <div class="card-title">OpenAI investigating ‘elevated latency’ issue affecting ChatGPT [U]</div>
+  <p class="card-summary">Does ChatGPT seem slower than usual for you today? You’re not alone. more…</p>
+</a>
+<a href="https://arps18.github.io/posts/claude-code-mastery/" target="_blank" rel="noopener" class="card card--big3 company-anthropic">
+  <div class="card-meta">
+    <span class="card-source">Hacker News (Best)</span>
+    <span class="card-big3-tag anthropic">Anthropic</span>
+    <span>22h ago</span>
+  </div>
+  <div class="card-title">Claude Code as a Daily Driver: Claude.md, Skills, Subagents, Plugins, and MCPs</div>
+  <p class="card-summary">Article URL: https://arps18.github.io/posts/claude-code-mastery/ Comments URL: https://news.ycombinator.com/item?id=48289950 Points: 381 # Comments: 229</p>
+</a>
+<a href="https://36kr.com/p/3826390617870984?f=rss" target="_blank" rel="noopener" class="card card--big3 company-anthropic">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    <span class="card-big3-tag anthropic">Anthropic</span>
+    <span></span>
+  </div>
+  <div class="card-title">硅谷AI一线观察：一人花掉50万美金Token背后的大厂焦虑</div>
+  <p class="card-summary">文｜周鑫雨 邓咏仪 编辑｜张雨忻 硅谷持续了两个多月的Token-Maxxing（Token军备竞赛）焦虑，在Meta以一种戏谑的方式按下了休止符。 前情大家都知道了：2026年3月，为了鼓吹自己是一家“AI-Native”公司，Meta曾在内部上线了一个“Claudeonomics（Claude经济学）”榜单：员工消耗的Token越多，排名就越高；垫底的员工，有被裁的风险。 不过，当我们在4月末来到硅谷，Meta的朋友带来了故事的后续：榜单上线一个月后，第一名的员工将Token消耗刷到了近50万美金/月，折合近3000亿个Token。 不久后，Meta下架了这个榜单。至于下架原因，公司内没有</p>
+</a>
+<a href="https://www.wired.com/story/anthropic-christopher-olah-pope-ai-encyclical/" target="_blank" rel="noopener" class="card card--big3 company-anthropic">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    <span class="card-big3-tag anthropic">Anthropic</span>
+    <span>05/26 20:46</span>
+  </div>
+  <div class="card-title">Why the Vatican Invited Anthropic to the Pope’s AI Encyclical Presentation</div>
+  <p class="card-summary">Pope Leo’s first encyclical marks an unprecedented alliance between the Church and Silicon Valley.</p>
+</a>
+<a href="https://www.engadget.com/2182644/lastfm-independent-company-cbs-paramount-skydance/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Engadget</span>
+    
+    <span>2h ago</span>
+  </div>
+  <div class="card-title">Last.fm goes independent after breaking up with Paramount Skydance</div>
+  <p class="card-summary">Last.fm is now an independent company, nearly two decades after it was acquired by CBS.</p>
+</a>
+<a href="https://mlsu.io/posts/day-off/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Hacker News (Best)</span>
+    
+    <span>3h ago</span>
+  </div>
+  <div class="card-title">Can we have the day off?</div>
+  <p class="card-summary">Article URL: https://mlsu.io/posts/day-off/ Comments URL: https://news.ycombinator.com/item?id=48302745 Points: 645 # Comments: 380</p>
+</a>
+<a href="https://36kr.com/newsflashes/3828414945038985?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">半日主力资金加仓电子股，抛售非银金融股</div>
+  <p class="card-summary">主力资金早间净流入电子、机械设备、公用事业、通信、国防军工等板块，净流出非银金融、计算机、家用电器、医药生物、食品饮料等板块。具体到个股来看，风华高科、中芯国际、云南诸业获净流入23.07亿元、21.82亿元、19.68亿元。净流出方面，东山精密、长电科技、胜宏科技遭抛售17.26亿元、17.23亿元、12.85亿元。（第一财经）</p>
+</a>
+<a href="https://36kr.com/newsflashes/3828419004404609?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">蔚来CEO李斌：原材料价格上涨，整车成本已涨了1万元左右</div>
+  <p class="card-summary">36氪获悉，5月28日，蔚来CEO李斌在“蔚来ES9媒体面对面”交流中提到，今年以来，包括镍、钴、碳酸锂等原材料价格上涨，一辆车的成本涨了一万多元。李斌提到，涉及大宗商品、内存芯片等产品，不止影响汽车汽车行业，也会影响增长更猛、更有钱的行业，所以车企没什么议价权。今年以来内存涨价后还没降下来，原材料带来的成本上升再短期内也难以下降，这些成本都得企业自行消化。</p>
+</a>
+<a href="https://36kr.com/newsflashes/3828413545304966?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">腾讯：《王者荣耀》将与阅文集团继续开展战略合作，并积极探索游戏AI应用</div>
+  <p class="card-summary">36氪获悉，5月27日，SPARK2026腾讯游戏发布会举行，42款游戏公布最新动态。其中，《王者荣耀》宣布将与阅文集团继续开展战略合作，并积极探索游戏AI应用，AI解说已经上线。《和平精英》公布2026暑期版本革新计划，涵盖暑期玩法升级、绿洲启元创作生态、AI明星队友、IP联动、IP影视计划及刺激之夜城市官宣等模块。</p>
+</a>
+<a href="https://36kr.com/newsflashes/3828388243575425?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">京东方减资至约370.4亿</div>
+  <p class="card-summary">36氪获悉，天眼查App显示，近日，京东方科技集团股份有限公司发生工商变更，注册资本由约374.1亿人民币减至约370.4亿人民币。 该公司成立于1993年4月，法定代表人为陈炎顺，经营范围包括制造电子计算机软硬件、经营电信业务、计算机数据处理等，由北京国有资本运营管理有限公司、香港中央结算有限公司、北京京东方投资发展有限公司等共同持股。</p>
+</a>
+<a href="https://36kr.com/newsflashes/3828404162499204?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">A股三大指数午间休盘涨跌不一，培育钻石概念大涨</div>
+  <p class="card-summary">36氪获悉，A股三大指数午间休盘涨跌不一，沪指跌0.14%，深成指跌0.26%，创业板指涨0.21%；培育钻石概念大涨，四方达、黄河旋风涨停，力量钻石涨超10%；半导体走强，华虹公司涨超15%，中芯国际涨超6%；贵金属板块领跌，中金黄金跌超5%，山金国际跌超4%；个股跌多涨少，全市场超3200股下跌。</p>
+</a>
+<a href="https://36kr.com/newsflashes/3828385365250692?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">去哪儿旅行：六一景区门票预订量涨七成</div>
+  <p class="card-summary">36氪获悉，今年六一儿童节适逢周一，北京、上海、广州、武汉、福州等地部分学校已官宣义务教育阶段学生、幼儿园儿童放假一天。去哪儿旅行数据显示，平台上5月30日至6月1日三天出行的景区门票预订量环比大涨七成；平台最热门景区TOP3分别是上海迪士尼度假区、北京环球度假区以及上海乐高乐园。</p>
+</a>
+<a href="https://36kr.com/newsflashes/3828382399861380?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">造物时代makera Z1桌面CNC海外众筹超8000万元</div>
+  <p class="card-summary">36氪获悉，造物时代推出桌面CNC产品makera Z1，将在京东全球独家首发。该产品搭载自研跨平台CAM软件Makera Studio，全自动模型识别、刀路生成及加工控制。此前makera Z1海外众筹金额已超8000万元人民币。</p>
+</a>
+<a href="https://36kr.com/newsflashes/3828379792642946?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">富达基金中国公司增资至2.18亿美元</div>
+  <p class="card-summary">36氪获悉，天眼查App显示，近日，富达基金管理（中国）有限公司发生工商变更，李少杰卸任董事长，由DAMIEN MARTIN MOONEY接任，同时，注册资本由2亿美元增至2.18亿美元。该公司成立于2021年5月，法定代表人为CHEN SUN，经营范围为公募基金管理业务，由FIL ASIA HOLDINGS PTE. LIMITED全资持股。</p>
+</a>
+<a href="https://36kr.com/newsflashes/3828374878769792?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">阿里语音大模型登顶Speech Arena国产第一，全球第五</div>
+  <p class="card-summary">36氪获悉，5月28日，在全球权威AI评测平台Artificial Analysis的语音排行榜（Speech Arena）上，阿里巴巴语音大模型Fun-Realtime-TTS-Preview 以1190分的Elo评分位列全球第五、国产第一。在ASR（将语音转为文字）、Chat（端到端的语音理解与对话）以及TTS（将文字转为语音）三个赛道，均斩获全国第一。</p>
+</a>
+<a href="https://36kr.com/newsflashes/3828368690942599?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">证监会副主席刘浩凌：外资配置中国优质资产意愿不断提升</div>
+  <p class="card-summary">5月28日，由深交所主办的2026全球投资者大会在深圳举行。证监会副主席刘浩凌发表致辞时表示，中国资本市场投融资综合改革举措步伐稳健、持续见效，市场整体估值处于合理区间，外资配置中国优质资产意愿不断提升。（证券时报）</p>
+</a>
+<a href="https://36kr.com/newsflashes/3828368387314305?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">证监会副主席刘浩凌：支持企业用好两个市场、两种资源</div>
+  <p class="card-summary">5月28日，由深交所主办的2026全球投资者大会在深圳举行。证监会副主席刘浩凌发表致辞时表示，2023年实施《境内企业境外发行证券和上市管理试行办法》以来，境外上市备案管理工作总体平稳有序。截至2026年4月，中国证监会已办结418家境内企业首次境外发行上市备案申请，支持企业用好两个市场、两种资源。（证券时报）</p>
+</a>
+<a href="https://36kr.com/newsflashes/3828367841629057?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">证监会副主席刘浩凌：各类境外投资者持有A股流通市值超过4万亿元</div>
+  <p class="card-summary">5月28日，由深交所主办的2026全球投资者大会在深圳举行。证监会副主席刘浩凌发表致辞时表示，中国是世界经济增长的主要贡献者和稳定锚，是外资企业投资兴业的沃土。今年以来，外资通过各种渠道稳步流入中国股市。截至目前，各类境外投资者持有A股流通市值超过4万亿元，已成为中国资本市场的重要参与者。（证券时报）</p>
+</a>
+<a href="https://36kr.com/newsflashes/3828356055257732?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">智元机器人、地铁设计等在广州成立新科技公司，注册资本3000万</div>
+  <p class="card-summary">36氪获悉，天眼查App显示，近日，智合广行（广州）科技有限公司成立，法定代表人为邓一帆，注册资本3000万人民币，经营范围包括智能机器人的研发、服务消费机器人销售、智能机器人销售等，由广州智运科技投资合伙企业（有限合伙）、地铁设计、智元机器人关联公司智元创新（上海）科技股份有限公司共同持股。</p>
+</a>
+<a href="https://36kr.com/newsflashes/3828344500540040?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">金山办公入选2026年《财富》最受赞赏的中国公司</div>
+  <p class="card-summary">36氪获悉，5月27日，《财富》（中文版）发布2026年最受赞赏的中国公司榜单及行业明星榜，金山办公成为唯一入选的办公软件企业。近年来，金山办公持续把WPS AI能力深度融合进个人办公场景，并以WPS 365的文档、协作、AI三大能力持续助力组织级客户实现数智化办公，同时积极拓展海外市场——截至2025年，WPS Office海外月活设备数达到2.45亿，PC版海外月活设备数增速超过了53%。</p>
+</a>
+<a href="https://36kr.com/newsflashes/3828343005565574?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">富途、长桥清理虚假证明材料开户和空账户</div>
+  <p class="card-summary">在中国证监会封堵非法跨境证券业务后，记者获悉，近日富途、长桥均已对使用虚假证明材料开户的账户、无资产和持仓的空账户开展清理，对两类账户进行销户处理。同时，记者注意到，富途牛牛APP在“账户”栏新增了一项“更新身份信息”快捷入口，并配套一份“关于更新身份信息的说明”，提示客户若持有符合要求的境外身份证明，信息更新完成后，账户交易、资金存取等各项业务与功能均不受任何影响。 （第一财经）</p>
+</a>
+<a href="https://36kr.com/newsflashes/3828338828333696?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">澳大利亚政府就“永久化学品”污染起诉3M公司</div>
+  <p class="card-summary">澳大利亚政府正在起诉3M公司并索赔逾14亿美元，指控这家制造企业隐瞒了所谓“永久化学品”的相关信息，这些化学品曾被用于澳大利亚28个国防基地。澳大利亚政府周四表示，由于消防泡沫中的化学物质引发污染，正寻求超过20亿澳元、折合14.3亿美元的损害赔偿。（新浪财经）</p>
+</a>
+<a href="https://36kr.com/newsflashes/3828338268312456?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">鸿蒙生态设备超13亿台</div>
+  <p class="card-summary">今日在开源鸿蒙开发者大会2026上，开放原子开源基金会理事长谢少锋表示，目前开源鸿蒙社区代码量突破1.4亿行，贡献者超过13000名，支持手机、平板、电脑、电视、穿戴及行业智能终端等形态。此外，华为相关负责人在会上表示，鸿蒙智能硬件生态设备累计数已超过13亿台。 （第一财经）</p>
+</a>
+<a href="https://36kr.com/newsflashes/3828337308504706?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">自然资源部：力争到2030年海洋创新药产业增加值突破1300亿元</div>
+  <p class="card-summary">5月28日，自然资源部召开5月例行新闻发布会，发布并解读《关于加快海洋药物和功能制品高质量发展的指导意见》。《指导意见》的工作目标是，力争到2030年，多项海洋创新药上市，产业增加值突破1300亿元，创新能力和集聚水平显著提升，综合实力进入国际前列。（证券时报）</p>
+</a>
+<a href="https://36kr.com/newsflashes/3828333909201541?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">蔚来ES9上市，整车售价49.8万元起</div>
+  <p class="card-summary">36氪获悉，5月27日晚，蔚来ES9正式上市，提供行政豪华版、行政签名版、地平线特别版三个版本，整车购买起售价49.8万元，采用BaaS电池租用方式购买，起售价为39万元。据介绍，ES9 搭载全域900V高压架构、中国首个量产交付的线控转向及后轮转向，标配Cedar AQUILA蔚来天鹰座超感系统和蔚来世界模型（NWM）架构，具备更强大的场景泛化与持续进化能力。</p>
+</a>
+<a href="https://36kr.com/p/3827585618154118?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">AI内容共创平台「FunloomAI」再获数千万Pre-A轮融资，让创作回归创意本身 | 36氪首发</div>
+  <p class="card-summary">文丨刘士武 封面来源 | Funloom 官网 36氪获悉，AI内容共创平台公司北京库兰织梦科技有限公司（以下简称「库兰织梦」），已于近日完成数千万元人民币Pre-A融资。本轮融资由晴澜家族办公室领投，上海天使会跟投，此前投资人包括奇绩创坛、盛大网络&amp;连尚网络创始人陈大年。本轮融资后，公司估值已达到2亿元，资金将用于产品研发升级和团队扩张。 库兰织梦成立于2023年，创始人吴同曾任职Unity，拥有5年游戏行业创业经验，推出《12世纪的黎凡特》《活过今晚》《库兰精灵》等十余款游戏，运营游戏发行自媒体“咕咕同”获得数百万播放，作品曾获吉比特、CUSGA、电魂等多个游戏创作大赛最佳玩法奖，上榜25</p>
+</a>
+<a href="https://36kr.com/p/3828191630348934?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">8点1氪丨“高考期间AI工具将禁用”？豆包等回应；亚朵门店回应酒店免费提供隐藏摄像头检测仪；三星工会同意新薪酬方案，人均270万元奖金</div>
+  <p class="card-summary">今日热点导览 阿里员工十三薪将并入年终奖 曝小红书获世界杯转播权，成为除央视、咪咕外唯一持权方 微信小游戏月活跃用户超过5亿 聚焦直播带货、外卖等，市场监管总局部署整治“内卷式”竞争 SpaceX上市消息引燃太空相关股票，特斯拉与SpaceX合并讨论升温 长鑫科技科创板IPO获上市委会议通过 TOP 3大新闻 “高考期间AI工具将禁用”？豆包、元宝等回应 日前，“高考期间AI工具将禁用”的话题引发关注，有不少网友讨论，高考期间AI工具是否将暂停拍题识图、试题解答、试卷解析等功能？5月27日，界面新闻求问豆包，其明确回答：“考试进行中，我不会配合解答高考试题、撰写考场作文、分析考题答案，但考试前</p>
+</a>
+<a href="https://36kr.com/p/3827658881323649?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">腾讯游戏的One More Thing，是AI</div>
+  <p class="card-summary">文丨贝果树 编辑丨刘士武 5月27日，2026年腾讯游戏发布会于晚上八点举办。在发布会上，腾讯从制作、发行、投资三个板块带来了42款游戏的新动态，其中包含15款新品，新品的数量相较于2025年发布会的24款有所减少。 来源：2026腾讯游戏发布会 与往届发布会不同的是，此次的发布会上，腾讯在AI游戏应用方面有了更多的输出。在游戏制作板块，腾讯介绍了如《和平精英》中的新AI队友小田、《王者荣耀》中的AI助手灵宝和电竞的AI解说等应用。 当然，这些AI在游戏中的应用案例绝大部分都已经在此前实现， 最引人瞩目的，是在发布会最后的“One More Thing”环节，腾讯带来了三款更为重磅的AI相关产</p>
+</a>
+<a href="https://www.engadget.com/2182614/google-employee-accused-of-making-1-million-from-insider-trading-on-polymarket/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Engadget</span>
+    
+    <span>4h ago</span>
+  </div>
+  <div class="card-title">Google employee accused of making $1 million from insider trading on Polymarket</div>
+  <p class="card-summary">Who could have seen this coming?</p>
+</a>
+<a href="https://9to5mac.com/2026/05/27/fcc-filing-shows-amazon-plans-to-acquire-apples-20-stake-in-globalstar/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>5h ago</span>
+  </div>
+  <div class="card-title">FCC filing shows Amazon plans to acquire Apple’s 20% stake in Globalstar</div>
+  <p class="card-summary">Following last month’s announcement that Amazon would acquire Globalstar, the company has now informed the FCC that it will also take over Apple’s 20% stake in the satellite connectivity company. Here are the details. more…</p>
+</a>
+<a href="https://www.wired.com/story/google-employee-accused-of-polymarket-one-million/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>5h ago</span>
+  </div>
+  <div class="card-title">Google Security Engineer Arrested in Million-Dollar Polymarket Trading Scheme</div>
+  <p class="card-summary">According to federal prosecutors, Michele Spagnuolo made more than $1 million on the prediction market platform using confidential information about Google Search traffic.</p>
+</a>
+<a href="https://9to5mac.com/2026/05/27/new-report-shows-annual-app-subscribers-rarely-return-after-they-cancel/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>6h ago</span>
+  </div>
+  <div class="card-title">New report shows annual app subscribers rarely return after they cancel</div>
+  <p class="card-summary">RevenueCat has published part two of its State of Subscription Apps 2026 report, with new insights into how likely users are to cancel or renew their subscriptions, based on region, subscription plan, and the app’s overall pricing strategy. Here are the details. more…</p>
+</a>
+<a href="https://9to5mac.com/2026/05/27/ted-danson-joins-upcoming-untitled-apple-tv-comedy-series/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>7h ago</span>
+  </div>
+  <div class="card-title">Ted Danson joins upcoming untitled Apple TV comedy series</div>
+  <p class="card-summary">Actor Ted Danson (Cheers, The Good Place) is the newest star to join an upcoming half-hour comedy series led and produced by Elizabeth Banks (The Hunger Games, Love &amp; Mercy). Here are the details. more…</p>
+</a>
+<a href="https://www.engadget.com/2182499/halide-mark-iii-adds-a-built-in-editor-to-the-popular-camera-app/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Engadget</span>
+    
+    <span>7h ago</span>
+  </div>
+  <div class="card-title">Halide Mark III adds a built-in editor to the popular camera app</div>
+  <p class="card-summary">The update also introduces the app's take on film stock simulation.</p>
+</a>
+<a href="https://9to5mac.com/2026/05/27/ipados-26-5-has-convenient-upgrade-when-using-magic-keyboard-more/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>7h ago</span>
+  </div>
+  <div class="card-title">iPadOS 26.5 has convenient upgrade when using Magic Keyboard, more</div>
+  <p class="card-summary">iOS and iPadOS 26.5 launched earlier this month, and one of their under-the-radar improvements involves using a Mac accessory—Magic Keyboard, Magic Trackpad, or Magic Mouse—with your iPhone or iPad. Here are the details. more…</p>
+</a>
+<a href="https://www.engadget.com/2182484/marathon-s-first-open-play-week-starts-on-june-2/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Engadget</span>
+    
+    <span>7h ago</span>
+  </div>
+  <div class="card-title">Marathon's first open play week starts on June 2</div>
+  <p class="card-summary">Bungie also shared more information about what players can expect from the game's new season.</p>
+</a>
+<a href="https://9to5mac.com/2026/05/27/daily-may-27-2026/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>7h ago</span>
+  </div>
+  <div class="card-title">9to5Mac Daily: May 27, 2026 – New anti-theft iPhone features, more</div>
+  <p class="card-summary">Listen to a recap of the top stories of the day from 9to5Mac. 9to5Mac Daily is available on iTunes and Apple’s Podcasts app, Stitcher, TuneIn, Google Play, or through our dedicated RSS feed for Overcast and other podcast players. Sponsored by CardPointers: The best way to maximize your credit card r</p>
+</a>
+<a href="https://blog.youtube/news-and-events/improving-ai-labels-viewers-creators/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Hacker News (Best)</span>
+    
+    <span>7h ago</span>
+  </div>
+  <div class="card-title">YouTube to automatically label AI-generated videos</div>
+  <p class="card-summary">https://variety.com/2026/digital/news/youtube-ai-video-label... Comments URL: https://news.ycombinator.com/item?id=48299753 Points: 590 # Comments: 357</p>
+</a>
+<a href="https://9to5mac.com/2026/05/27/spotify-now-lets-users-save-or-share-podcast-clips/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>8h ago</span>
+  </div>
+  <div class="card-title">Spotify now lets users save or share podcast clips</div>
+  <p class="card-summary">The feature, now rolling out to Free and Premium users, includes a simple trimming tool that lets listeners save or share a specific moment from a podcast episode. Here are the details. more…</p>
+</a>
+<a href="https://9to5mac.com/2026/05/27/facebook-plus-instagram-plus-subscriptions-launch-for-3-99-month/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>9h ago</span>
+  </div>
+  <div class="card-title">Facebook Plus, Instagram Plus subscriptions launch for $3.99/month</div>
+  <p class="card-summary">Meta is reportedly rolling out a trio of new subscription offerings today, with WhatsApp Plus being joined by Facebook Plus and Instagram Plus plans. Here are the details. more…</p>
+</a>
+<a href="https://9to5mac.com/2026/05/27/this-find-my-wallet-tracker-has-two-features-that-make-it-stand-out/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>9h ago</span>
+  </div>
+  <div class="card-title">This Find My wallet tracker has two features that make it stand out</div>
+  <p class="card-summary">It’s been five years since Apple unveiled its AirTags. They were a pleasant surprise and addition to Apple’s lineup. They worked well, lasted about a year before needing a battery replacement, and fit perfectly into the Apple ecosystem. But the biggest compromise with the AirTags is the form factor.</p>
+</a>
+<a href="https://9to5mac.com/2026/05/27/whatsapp-plus-subscription-launches-for-2-99-month-details-here/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>9h ago</span>
+  </div>
+  <div class="card-title">‘WhatsApp Plus’ subscription launches for $2.99/month, details here</div>
+  <p class="card-summary">WhatsApp has been testing an optional subscription plan, and now per TechCrunch it is officially launching around the world. ‘WhatsApp Plus’ costs $2.99/month, here’s what it gets you. more…</p>
+</a>
+<a href="https://www.theverge.com/tech/938635/google-polymarket-insider-trading-prediction-market-bets" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Verge</span>
+    
+    <span>5h ago</span>
+  </div>
+  <div class="card-title">A Google employee allegedly used inside information to win $1.2 million on Polymarket</div>
+  <p class="card-summary">Federal prosecutors charged a Google employee with fraud after he allegedly made $1.2 million on Polymarket bets related to Search-related trends in 2025, as reported earlier by ABC News. In their now-unsealed complaint, prosecutors allege that Michele Spagnuolo &quot;knew the outcome of these wagers bef</p>
+</a>
+<a href="https://9to5mac.com/2026/05/27/how-to-watch-apples-wwdc-keynote-ios-27-new-siri-and-more/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>9h ago</span>
+  </div>
+  <div class="card-title">How to watch Apple’s WWDC keynote: iOS 27, new Siri, and more</div>
+  <p class="card-summary">WWDC 2026 is almost here, and with it the unveiling of Apple’s major new software versions: iOS 27, macOS 27, watchOS 27, and more—including Siri’s major overhaul. Here’s how to watch Apple’s WWDC 2026 keynote live. more…</p>
+</a>
+<a href="https://www.wired.com/story/huawei-chip-queen-moores-law-tau/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>9h ago</span>
+  </div>
+  <div class="card-title">Huawei's ‘Chip Queen’ Throws Down the Gauntlet</div>
+  <p class="card-summary">The Chinese company is adapting to the demise of Moore’s Law, which guides chip production. It could complicate US chip dominance.</p>
+</a>
+<a href="https://www.wired.com/story/dating-app-blk-is-giving-away-free-gas-to-convince-people-to-get-out-of-the-house/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>10h ago</span>
+  </div>
+  <div class="card-title">A Dating App Is Giving Away Free Gas to Convince People to Get Out of the House</div>
+  <p class="card-summary">Amid ongoing economic anxieties, BLK and other companies are giving away basic essentials to appeal to the public.</p>
+</a>
+<a href="https://9to5mac.com/2026/05/27/mlb-the-show-is-officially-bringing-the-best-baseball-game-to-iphone/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>10h ago</span>
+  </div>
+  <div class="card-title">MLB: The Show officially brings the best baseball game to iPhone</div>
+  <p class="card-summary">Heads up, baseball fans. MLB: The Show has officially launched on iPhone. If you want to play as your favorite MLB team on a gaming console, MLB: The Show is the name of the game. With the 20th anniversary of the game’s first release, MLB: The Show has arrived on iPhone for the first time. more…</p>
+</a>
+<a href="https://www.thran.uk/writ/hdid/2025/12/simcity-3k-in-4k.html" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Hacker News (Best)</span>
+    
+    <span>10h ago</span>
+  </div>
+  <div class="card-title">SimCity 3k in 4k (2025)</div>
+  <p class="card-summary">Article URL: https://www.thran.uk/writ/hdid/2025/12/simcity-3k-in-4k.html Comments URL: https://news.ycombinator.com/item?id=48297645 Points: 305 # Comments: 117</p>
+</a>
+<a href="https://www.theverge.com/transportation/938513/ferrari-luce-ev" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Verge</span>
+    
+    <span>6h ago</span>
+  </div>
+  <div class="card-title">All the news about Ferrari’s polarizing Luce EV</div>
+  <p class="card-summary">Ferrari fans don’t like the design of the new Luce EV, an electric four-door sedan that just doesn’t look like the Ferraris of old. It was designed with help from Jony Ive’s LoveFrom, but what worked for Ive at Apple isn’t working for Ferrari. The Luce’s launch immediately preceded a stock drop that</p>
+</a>
+<a href="https://9to5mac.com/2026/05/27/new-apple-tv-thriller-has-police-officers-missing-daughter-resurface-after-11-years/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>10h ago</span>
+  </div>
+  <div class="card-title">New Apple TV thriller has police officer’s missing daughter resurface after 11 years</div>
+  <p class="card-summary">Apple TV just announced a new thriller series, Last Seen, that centers on a police detective-turned-dispatcher who gets a call from his daughter who went missing 11 years before. Here are the details and release date. more…</p>
+</a>
+<a href="https://www.theverge.com/gadgets/938519/apple-ipad-air-m4-deal-sale" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Verge</span>
+    
+    <span>6h ago</span>
+  </div>
+  <div class="card-title">Apple’s newest iPad Air is up to $100 off for the first time</div>
+  <p class="card-summary">If you want an iPad that’s more powerful than the entry-level model but less expensive than the iPad Pro, the latest iPad Air is the one to buy, and it’s down to one its best prices to date. The 11-inch Air with 128GB of storage and Wi-Fi connectivity is available at Amazon starting at $519.99 […]</p>
+</a>
+<a href="https://www.theguardian.com/world/2026/may/27/canada-sweden-saab-globaleye-aircraft" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Hacker News (Best)</span>
+    
+    <span>11h ago</span>
+  </div>
+  <div class="card-title">Canada to order military plane fleet from Sweden in shift from US suppliers</div>
+  <p class="card-summary">Article URL: https://www.theguardian.com/world/2026/may/27/canada-sweden-saab-globaleye-aircraft Comments URL: https://news.ycombinator.com/item?id=48296994 Points: 449 # Comments: 325</p>
+</a>
+<a href="https://9to5mac.com/2026/05/27/mojito-for-mac-is-a-new-and-free-emoji-picker-with-auto-complete/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>11h ago</span>
+  </div>
+  <div class="card-title">Mojito for Mac is a new and free emoji picker with auto-complete</div>
+  <p class="card-summary">Emoji selection on the Mac remains an area ripe for improvement with future versions of macOS. Until then, Mojito is a new and free solution that greatly improves the Mac emoji picker experience. more…</p>
+</a>
+<a href="https://www.wired.com/gallery/best-computer-speakers/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>11h ago</span>
+  </div>
+  <div class="card-title">8 Best Computer Speakers (2026) After Testing 25+ Pairs</div>
+  <p class="card-summary">These WIRED-tested computer speakers, from stereo speakers to surround sound, will suit any budget.</p>
+</a>
+<a href="https://www.pcgamer.com/hardware/duckduckgos-ai-free-search-saw-nearly-28-percent-more-visits-in-the-week-following-googles-insistence-that-people-love-ai-mode/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Hacker News (Best)</span>
+    
+    <span>11h ago</span>
+  </div>
+  <div class="card-title">DuckDuckGo search saw 28% more visits after Google said people love AI mode</div>
+  <p class="card-summary">Article URL: https://www.pcgamer.com/hardware/duckduckgos-ai-free-search-saw-nearly-28-percent-more-visits-in-the-week-following-googles-insistence-that-people-love-ai-mode/ Comments URL: https://news.ycombinator.com/item?id=48296649 Points: 709 # Comments: 354</p>
+</a>
+<a href="https://www.theverge.com/tech/938339/lux-optics-halide-mark-iii-ios-iphone-camera-app-looks-editor-raw-files-now-available" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Verge</span>
+    
+    <span>7h ago</span>
+  </div>
+  <div class="card-title">The new Halide camera app launches with film looks and an upgraded photo editor</div>
+  <p class="card-summary">After first being announced in December 2024, Lux Optics has finally released the latest version of its Halide camera app for the iPhone and iPad. The Halide Mark III app's most compelling feature is a new film simulation engine and a collection of five new Looks that can be applied to photos as the</p>
+</a>
+<a href="https://www.theverge.com/tech/938500/facebook-whatsapp-instagram-meta-ai-subscriptions" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Verge</span>
+    
+    <span>7h ago</span>
+  </div>
+  <div class="card-title">Facebook launches a ‘Plus’ subscription that gives you extra features</div>
+  <p class="card-summary">After announcing tests of premium subscriptions for Facebook, Instagram, WhatsApp earlier this year, TechCrunch and Bloomberg report that Meta is launching a global rollout over the next few weeks and is also starting to test subscriptions for Meta AI. With the new offerings, Meta joins many other t</p>
+</a>
+<a href="https://9to5mac.com/2026/05/27/halide-mark-iii-pro-camera-for-iphone-arrives-with-three-key-photography-upgrades/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>11h ago</span>
+  </div>
+  <div class="card-title">Halide Mark III pro camera for iPhone arrives with three key photography upgrades</div>
+  <p class="card-summary">Halide’s big 3.0 upgrade has been on our radar since late 2024. Today, the pro camera app has arrived in the form of Halide Mark III. It brings three key photography upgrades to the experience. more…</p>
+</a>
+<a href="https://www.theverge.com/features/937620/enhanced-games-performance-enhancing-drugs-science-health-sports" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Verge</span>
+    
+    <span>8h ago</span>
+  </div>
+  <div class="card-title">Roids were all the rage at the Enhanced Games</div>
+  <p class="card-summary">In Las Vegas, the blazing sun beats down on a makeshift Olympic-length pool. Cody Miller stands on the starting block of lane one. His arms are raised in victory. MC Hammer's &quot;U Can't Touch This&quot; thumps over the loudspeakers as he rips off his swimming cap, throwing it to the ground. Miller lets out</p>
+</a>
+<a href="https://support.last.fm/t/last-fm-is-now-independent/118591" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Hacker News (Best)</span>
+    
+    <span>12h ago</span>
+  </div>
+  <div class="card-title">Last.fm is now independent</div>
+  <p class="card-summary">Article URL: https://support.last.fm/t/last-fm-is-now-independent/118591 Comments URL: https://news.ycombinator.com/item?id=48295892 Points: 669 # Comments: 184</p>
+</a>
+<a href="https://9to5mac.com/2026/05/27/deals-m5-macbook-air-airpods-4-magic-mouse/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>12h ago</span>
+  </div>
+  <div class="card-title">Deals: 16GB and 24GB M5 MacBook Air $200 off, AirPods 4 nearly 25% off, Magic Mouse Amazon low, more</div>
+  <p class="card-summary">Alongside ongoing all-time lows on the base models at nearly $200 off, today’s 9to5Toys Lunch Break is headlined by the 16GB/1TB and the 24GB/1TB M5 MacBook Air models hitting new Amazon low pricing today at $199 off. We also have Apple’s base 1TB M5 MacBook Pro back at the $1,499 Amazon all-time lo</p>
+</a>
+<a href="https://www.engadget.com/2182061/how-to-get-wired-internet-without-ethernet-cable-in-walls/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Engadget</span>
+    
+    <span>12h ago</span>
+  </div>
+  <div class="card-title">How to get wired internet without running ethernet cables</div>
+  <p class="card-summary">Advances in adapters mean you could ditch Wi-Fi for better performance.</p>
+</a>
+<a href="https://9to5mac.com/2026/05/27/ios-26-5-gave-messages-app-encrypted-rcs-heres-how-to-check-its-working/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>12h ago</span>
+  </div>
+  <div class="card-title">iOS 26.5 gave Messages app encrypted RCS, here’s how to check it’s working</div>
+  <p class="card-summary">iOS 26.5 launched earlier this month, with one of the major new features the addition of RCS end-to-end encryption in the Messages app. Here’s how to check it’s enabled on your iPhone and active in a given conversation. more…</p>
+</a>
+<a href="https://9to5mac.com/2026/05/27/apple-wallet-digital-id-support-expands-to-arkansas/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>12h ago</span>
+  </div>
+  <div class="card-title">Apple Wallet digital ID support expands to new state</div>
+  <p class="card-summary">Apple Wallet driver’s license support is expanding to a new state. Starting today, Arkansas residents can add their driver’s license to the Apple Wallet app on iPhone and Apple Watch. more…</p>
+</a>
+<a href="https://www.wired.com/story/i-like-ferrari-luce-ev-but-this-is-why-its-heartbreaking/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>12h ago</span>
+  </div>
+  <div class="card-title">I Like Ferrari's Luce EV. But This Is Why It's Heartbreaking</div>
+  <p class="card-summary">Designed by Jony Ive and a host of ex-Cupertino colleagues, the Luce shows us what might have been had Apple made good on its $10 billion bet.</p>
+</a>
+<a href="https://www.wired.com/story/drone-ports-and-funding-mayhem-trumps-ballroom-takes-on-congress/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>12h ago</span>
+  </div>
+  <div class="card-title">Drone Ports and Funding Mayhem: Trump's Ballroom Has Turned Toxic</div>
+  <p class="card-summary">“Republicans are just going to have to suck it up and get it done,” says one Trump aide about the funding melee. The votes, though, may simply not be there.</p>
+</a>
+<a href="https://www.engadget.com/2182030/asus-rog-zephyrus-duo-review/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Engadget</span>
+    
+    <span>12h ago</span>
+  </div>
+  <div class="card-title">ASUS ROG Zephyrus Duo review: Outrageously expensive, totally awesome</div>
+  <p class="card-summary">The ASUS ROG Zephyrus Duo is a gamer's dream machine, but its price is a nightmare.</p>
+</a>
+<a href="https://9to5mac.com/2026/05/27/roku-launches-new-home-screen-design-for-all-tvs/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>13h ago</span>
+  </div>
+  <div class="card-title">Roku launches new Home Screen design for all TVs</div>
+  <p class="card-summary">Roku just unveiled what it’s calling its biggest Home Screen redesign in over a decade, and it launches today. Here are the details. more…</p>
+</a>
+<a href="https://www.wired.com/story/ex-google-apple-ai-researchers-want-to-make-ai-that-gets-smarter-as-you-use-it/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>13h ago</span>
+  </div>
+  <div class="card-title">Former Google and Apple Researchers Launch a Startup to Build AI’s Missing Feedback Loop</div>
+  <p class="card-summary">Trajectory is betting the rapid iteration cycle that supercharged vibe-coding can help all kinds of companies build AI products that learn continuously.</p>
+</a>
+<a href="https://www.wired.com/story/xreal-expands-xbx-its-extra-light-smart-specs/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>14h ago</span>
+  </div>
+  <div class="card-title">Xreal’s New $299 ‘xbx’ Smart Glasses Channel Xbox Vibes</div>
+  <p class="card-summary">These display smart glasses can connect to a phone, laptop, or gaming handheld and project the screen to your eyeballs.</p>
+</a>
+<a href="https://www.theverge.com/games/938340/valve-steam-deck-price-increase" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Verge</span>
+    
+    <span>10h ago</span>
+  </div>
+  <div class="card-title">Valve raises Steam Deck prices by more than $200</div>
+  <p class="card-summary">Valve has significantly increased the price of the Steam Deck - but now, it's also in stock. The 512GB Steam Deck OLED now costs $789, up from $549, while the 1TB model costs $949, up from $649. As I write this, both models are available to buy on Steam with an estimated delivery date of […]</p>
+</a>
+<a href="https://9to5mac.com/2026/05/27/after-the-whistle-podcast-returns-for-world-cup-with-ted-lasso-star/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>14h ago</span>
+  </div>
+  <div class="card-title">After the Whistle podcast returns for World Cup with Ted Lasso star</div>
+  <p class="card-summary">Apple announced today that its After the Whistle podcast will return for a new season soon to cover the World Cup, with Ted Lasso’s Brendan Hunt co-hosting with Rebecca Lowe. Here are the details. more…</p>
+</a>
+<a href="https://www.theverge.com/tech/938031/xtool-m2-craft-machine-cmyk-inkjet-printing-laser-diode-cutter" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Verge</span>
+    
+    <span>10h ago</span>
+  </div>
+  <div class="card-title">You can print, slice, and engrave using this desktop crafting machine</div>
+  <p class="card-summary">xTool has announced a new multi-purpose crafting machine that could potentially be one of the most affordable ways to start an Etsy shop. Its modular design facilitates a CMYK print head that works on multiple materials including paper, wood, and felt. It can later be swapped with laser-based cuttin</p>
+</a>
+<a href="https://www.wired.com/story/the-state-department-really-doesnt-want-to-talk-about-the-office-of-remigration/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>14h ago</span>
+  </div>
+  <div class="card-title">The State Department Really Doesn’t Want to Talk About the Office of Remigration</div>
+  <p class="card-summary">The office was created a year ago and seemingly named for a far right European plan to expel minorities and immigrants from Western nations. It now works, a source says, with little to no oversight.</p>
+</a>
+<a href="https://www.theverge.com/gadgets/927121/best-college-graduation-gift-ideas" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Verge</span>
+    
+    <span>10h ago</span>
+  </div>
+  <div class="card-title">The Verge’s 2026 college graduation gift guide</div>
+  <p class="card-summary">Graduating from college is exciting, but it can also feel slightly terrifying. Along with celebrating a huge accomplishment, many grads jump right into looking for a job. Some might be getting their first apartment, too, which brings on a whole new set of responsibilities. That's why getting the rig</p>
+</a>
+<a href="https://www.theverge.com/tech/938249/motorola-device-native-amazon-affiliate-hijack" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">The Verge</span>
+    
+    <span>10h ago</span>
+  </div>
+  <div class="card-title">Motorola says affiliate hijacking of Amazon app was ‘unintended’</div>
+  <p class="card-summary">Motorola says that recently discovered behavior, which saw some of its phones sending users to an affiliate tracking website before opening the Amazon app, was &quot;unintended&quot; and has been &quot;promptly corrected.&quot; The company didn't explain how the error was introduced in the first place. &quot;Recently, Motor</p>
+</a>
+<a href="https://9to5mac.com/2026/05/27/apple-increases-trade-in-values-for-iphone-ipad-more/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>15h ago</span>
+  </div>
+  <div class="card-title">Apple increases trade-in values for iPhone, iPad, more</div>
+  <p class="card-summary">Apple today updated its trade-in estimates across the board for iPhone, Apple Watch, Mac, iPad, and Android phones. Here are the current numbers. more…</p>
+</a>
+<a href="https://www.githubstatus.com/incidents/xy1tt3hs572m" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Hacker News (Best)</span>
+    
+    <span>15h ago</span>
+  </div>
+  <div class="card-title">Incident with Pull Requests, Issues, Git Operations and API Requests</div>
+  <p class="card-summary">Article URL: https://www.githubstatus.com/incidents/xy1tt3hs572m Comments URL: https://news.ycombinator.com/item?id=48293080 Points: 274 # Comments: 194</p>
+</a>
+<a href="https://rubbishtalk.com/economy/how-private-equity-bought-americas-essential-services/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Hacker News (Best)</span>
+    
+    <span>15h ago</span>
+  </div>
+  <div class="card-title">Private equity bought America's essential services</div>
+  <p class="card-summary">Article URL: https://rubbishtalk.com/economy/how-private-equity-bought-americas-essential-services/ Comments URL: https://news.ycombinator.com/item?id=48292941 Points: 472 # Comments: 507</p>
+</a>
+<a href="https://www.wired.com/story/osprey-farpoint-40-rave/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>16h ago</span>
+  </div>
+  <div class="card-title">The Osprey Farpoint 40 Has Been My Go-To Travel Bag for 8 Years</div>
+  <p class="card-summary">I’m a chronic overpacker, but this backpack is my perfect match, with its huge capacity, numerous pockets, and impressive durability.</p>
+</a>
+<a href="https://www.wired.com/story/waymo-takes-its-self-driving-cars-to-virginia/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>16h ago</span>
+  </div>
+  <div class="card-title">Waymo Takes Its Self-Driving Cars to Virginia</div>
+  <p class="card-summary">The company is mapping Alexandria and, soon, Arlington—right across from the power center of Washington, DC.</p>
+</a>
+<a href="https://orchidfiles.com/im-tired-of-ai-generated-answers/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Hacker News (Best)</span>
+    
+    <span>17h ago</span>
+  </div>
+  <div class="card-title">I'm Tired of Talking to AI</div>
+  <p class="card-summary">Article URL: https://orchidfiles.com/im-tired-of-ai-generated-answers/ Comments URL: https://news.ycombinator.com/item?id=48292224 Points: 1861 # Comments: 901</p>
+</a>
+<a href="https://www.wired.com/story/department-of-labor-tells-employees-to-report-anyone-prioritizing-dei/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>17h ago</span>
+  </div>
+  <div class="card-title">Department of Labor Tells Employees to Report Anyone Prioritizing DEI</div>
+  <p class="card-summary">The email instructs workers to report behavior that predates Donald Trump’s second inauguration. One employee tells WIRED it felt like a “reminder to narc on your coworkers.”</p>
+</a>
+<a href="https://www.wired.com/review/review-corsair-galleon-100-sd/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>17h ago</span>
+  </div>
+  <div class="card-title">Corsair Galleon 100 SD Review: Stream Deck Now Included</div>
+  <p class="card-summary">Corsair unites Stream Deck functionality with Drop keyboard design expertise on its latest Galleon SD 100.</p>
+</a>
+<a href="https://www.wired.com/story/a-new-species-of-tiny-octopus-was-discovered-in-the-galapagos-islands/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>18h ago</span>
+  </div>
+  <div class="card-title">A New Species of Tiny Octopus Was Discovered in the Galápagos Islands</div>
+  <p class="card-summary">An octopus about the size of a golf ball was first spotted in 2015 near Darwin Island. A new study gives it both a formal description and a name.</p>
+</a>
+<a href="https://www.wired.com/story/nasa-details-its-plan-to-build-a-lunar-base-at-the-moons-south-pole/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>18h ago</span>
+  </div>
+  <div class="card-title">NASA Details Its Plan to Build a Lunar Base at the Moon’s South Pole</div>
+  <p class="card-summary">The project’s first mission could arrive as soon as this year, with a little help from Blue Origin.</p>
+</a>
+<a href="https://arxiv.org/abs/2605.22391" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Hacker News (Best)</span>
+    
+    <span>19h ago</span>
+  </div>
+  <div class="card-title">All of human cooking compressed into 2 megabytes</div>
+  <p class="card-summary">Article URL: https://arxiv.org/abs/2605.22391 Comments URL: https://news.ycombinator.com/item?id=48291225 Points: 378 # Comments: 153</p>
+</a>
+<a href="https://www.wired.com/story/paramount-plus-coupon-code/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>22h ago</span>
+  </div>
+  <div class="card-title">Paramount+ Coupon Codes and Deals for June 2026</div>
+  <p class="card-summary">Save on streaming with the latest Paramount+ promo codes and deals, including 50% off subscriptions, free trials, and more.</p>
+</a>
+<a href="https://www.wired.com/story/home-depot-promo-code/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>22h ago</span>
+  </div>
+  <div class="card-title">Home Depot Promo Codes: 50% Off in June 2026</div>
+  <p class="card-summary">Save up to 50% today with the latest Home Depot promo codes for appliances, power tools, and more this June.</p>
+</a>
+<a href="https://www.wired.com/story/booking-com-promo-code/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>22h ago</span>
+  </div>
+  <div class="card-title">Booking.com Promo Codes: 20% Off | June 2026</div>
+  <p class="card-summary">Enjoy big savings on your next adventure with our Booking.com promo codes, coupons, and handpicked travel deals.</p>
+</a>
+<a href="https://www.wired.com/story/doordash-promo-code/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>22h ago</span>
+  </div>
+  <div class="card-title">50% Off DoorDash Promo Code | June 2026</div>
+  <p class="card-summary">Explore today’s top DoorDash promo codes for $25 off your first order, free delivery, and 50% off DashPass for students and select users.</p>
+</a>
+<a href="https://www.wired.com/story/rover-promo-code/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>22h ago</span>
+  </div>
+  <div class="card-title">Rover Promo Codes and Referral Deals for June 2026</div>
+  <p class="card-summary">Score your Rover promo code for 2026.</p>
+</a>
+<a href="https://www.wired.com/story/dell-coupon-code/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>22h ago</span>
+  </div>
+  <div class="card-title">Dell Coupon Codes: 20% Off for June 2026</div>
+  <p class="card-summary">Get 20% off with verified Dell promo code, plus today’s coupons for up to $600 off laptops, Alienware monitors, and all things tech.</p>
+</a>
+<a href="https://www.wired.com/story/lovehoney-discount-code/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>22h ago</span>
+  </div>
+  <div class="card-title">Lovehoney Coupon Offers: Toys, Lingerie, and Gift Set Discounts</div>
+  <p class="card-summary">Save on Lovehoney, including bestselling toys, lingerie, and popular gift sets for date nights, self-care, and couples’ play.</p>
+</a>
+<a href="https://www.wired.com/story/lg-promo-code/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>22h ago</span>
+  </div>
+  <div class="card-title">LG Promo Codes and Coupons for June 2026</div>
+  <p class="card-summary">Save 20% with an LG promo code today, plus up to $1,000 off appliances, 40% off bestselling TVs and monitors.</p>
+</a>
+<a href="https://www.wired.com/story/priceline-promo-code/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>22h ago</span>
+  </div>
+  <div class="card-title">Priceline Promo Codes &amp; Coupons: 10% Off June</div>
+  <p class="card-summary">Unlock massive discounts on Priceline hotels, flights, and rental cars. Find verified Priceline coupon codes and deals for Express Deals, student discounts, and more.</p>
+</a>
+<a href="https://www.wired.com/story/uplift-desk-coupon-code/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>22h ago</span>
+  </div>
+  <div class="card-title">Uplift Promo Codes: $570 Off</div>
+  <p class="card-summary">Upgrade your home office with the best Uplift Desk discount codes. Save on standing desks, ergonomic chairs, and accessories during the Spring Setup Sale.</p>
+</a>
+<a href="https://www.wired.com/story/litter-robot-promo-code/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>22h ago</span>
+  </div>
+  <div class="card-title">Litter-Robot Promo Codes and Deals: Up to $150 Off</div>
+  <p class="card-summary">Get the latest Litter-Robot Discounts on Litter-Robot self-cleaning litter boxes, accessories, and more.</p>
+</a>
+<a href="https://www.wired.com/story/verizon-promo-code/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>22h ago</span>
+  </div>
+  <div class="card-title">Verizon Promo Codes: $200 Verizon Gift Cards | June 2026</div>
+  <p class="card-summary">Ready for an upgrade? Apply our latest promotional codes today and choose a select service plan to score a discount with Verizon.</p>
+</a>
+<a href="https://www.wired.com/story/hostinger-coupon-code/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>22h ago</span>
+  </div>
+  <div class="card-title">Hostinger Promo Code: 79% Off for June 2026</div>
+  <p class="card-summary">Discover exclusive Hostinger promo codes, discounts, and deals on web hosting, cloud plans, and domain registration. Save big on your next Hostinger purchase today.</p>
+</a>
+<a href="https://9to5mac.com/2026/05/26/whatsapp-will-soon-let-iphone-users-share-documents-with-meta-ai/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>05/27 00:40</span>
+  </div>
+  <div class="card-title">WhatsApp will soon let iPhone users share documents with Meta AI</div>
+  <p class="card-summary">Meta is working on a new WhatsApp feature that lets users upload documents directly to Meta AI from the in-chat attachment menu. Here are the details. more…</p>
+</a>
+<a href="https://www.gingerlime.com/2026/stripe-seem-friendly-to-friendly-fraud/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Hacker News (Best)</span>
+    
+    <span>05/27 00:40</span>
+  </div>
+  <div class="card-title">Stripe is friendly to “friendly fraud”</div>
+  <p class="card-summary">Article URL: https://www.gingerlime.com/2026/stripe-seem-friendly-to-friendly-fraud/ Comments URL: https://news.ycombinator.com/item?id=48287982 Points: 312 # Comments: 221</p>
+</a>
+<a href="https://36kr.com/p/3827497128465287?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">氪星晚报 ｜高盛策略师将标普500指数目标点位上调至8000点，受AI和盈利所推动；阿里员工十三薪并入年终奖</div>
+  <p class="card-summary">大公司： 程一笑：可灵AI 3月ARR近5亿美元，较去年同期增长4倍 36氪获悉，在2026年第一季度业绩电话会上，快手科技创始人兼首席执行官程一笑表示，2026年3月，可灵AI年化收入运行率（ARR）近5亿美元，较去年3月的1亿美元增长4倍。程一笑表示，可灵AI一季度收入高速增长，主要来自B端企业客户API调用收入和P端付费会员订阅收入的双轮驱动。无论是用户数还是月均付费金额，可灵AI均实现了高速增长。从留存看，B端企业客户和P端付费会员均保持较好留存趋势，体现出可灵AI在专业创作场景中的技术和产品实力。 台积电CEO：今年全员平均分红奖金涨幅将超30% 针对员工近期在网络上对激励政策提出的</p>
+</a>
+<a href="https://36kr.com/p/3826932509364869?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">前两天，我们在亦庄听到了AI最真实的声音｜2026 AI Partner大会金句实录</div>
+  <p class="card-summary">当大模型API调用成本一年内骤降超过80%，百万Token仅需几分钱时，产业竞争便不再纠结于技术指标的高低，而是回归到最朴素的价值衡量——能否在实际场景中降本增效。行业的聚光灯，从实验室的榜单，转向了真实的生产线、医院诊室、物流仓库和城市管理后台。 2026年，谁能在复杂场景中解决真问题，谁才是这场变革的主角。 5月19日至20日，以“带着AI去前线”为主题的2026 AI Partner·北京亦庄AI+产业大会在北京经开区通明湖会展中心举办。大会由北京经开区管委会指导、36氪主办、国家信创园承办，设置9场圆桌对话、22场主题演讲以及一场别开生面的“世界咖啡”AI+产业对接会。60位国内领军企</p>
+</a>
+<a href="https://36kr.com/p/3826922264286083?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">经过华为、传音、拓竹历练，95后打造AI母婴界特斯拉｜36氪首发</div>
+  <p class="card-summary">作者 | 张子怡 编辑 | 袁斯来 硬氪获悉，AI母婴智能硬件品牌珂迪Coddie（以下简称“Coddie”）完成天使轮融资，融资金额数千万元，由钟鼎资本投资，向阳资本担任独家财务顾问。 Coddie团队于2026年初组建，由95后连续创业者何鋡威创立。何鋡威毕业于德国慕尼黑工业大学，先后任职华为、传音控股、拓竹科技等全球化科技企业。技术负责人毕业于国内顶级高校计算机专业，曾就职半导体龙头上市公司，负责大疆与Insta360影像IC方案落地；后加入国家“小巨人”第三代半导体企业担任产品负责人，具备复杂产品研发的深厚技术背景，以及前沿方案的系统整合能力。 当前全球母婴家庭面临养育压力大、成本高、</p>
+</a>
+<a href="https://36kr.com/p/3826354349412992?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">化险为夷的洛克王国，给所有长青游戏上了一课</div>
+  <p class="card-summary">文丨果脯 2026年5月21日，腾讯魔方工作室群开发的《洛克王国：世界》上线了S2赛季更新。这款基于13年经典IP、以精灵收集养成为核心的大世界游戏，在2026年3月底正式上线后迅速成为年度爆款。据官方数据，游戏上线9天用户量便突破3000万，全平台预约人数达6000万，DAU达到1300万。 S2赛季上线前，这款产品更是被寄予厚望，腾讯方面称其“有望成为下一款长青产品”。此时，距离《三角洲行动》正式官宣跻身“长青游戏”，也才过去一个季度。 出乎所有人意料的是，5月21日S2赛季更新后，事情迅速脱离了轨道。 几天之内，玩家社区出现大量争议，游戏B站官方动态评论数一度突破百万。彼时，玩家发现游戏</p>
+</a>
+<a href="https://36kr.com/p/3825817310368385?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">36氪首发｜男士美妆品牌「GREENLAB绿所」获宝顶创投战略投资，张耀东出任公司董事</div>
+  <p class="card-summary">36氪获悉，无感化面部理容品牌「GREENLAB绿所」（以下简称“绿所”）近日宣布完成千万级新一轮融资，本轮由宝顶创投战略投资。融资完成后，宝顶创投创始合伙人张耀东将出任绿所公司董事，参与品牌战略、产品矩阵、渠道经营等方面的长期建设。 这也是继2025年完成Pre-A轮融资后，绿所在半年左右时间内再次获得外部资本加注。据了解，本轮资金将主要用于新品研发量产、品牌建设、渠道经营及组织能力提升等方面。 绿所是36氪持续关注的品牌，定位“无感化面部理容”，重点面向“精致懒”的年轻男性用户。所谓“无感化”，指的是用户在购买、使用和呈现效果上都尽量没有心理负担：产品要自然、方便、高效，不需要复杂技巧，也</p>
+</a>
+<a href="https://36kr.com/p/3826385821192841?f=rss" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">36kr</span>
+    
+    <span></span>
+  </div>
+  <div class="card-title">红杉、华兴投了「AI产品的大众点评」，我们与它的02年创始人聊了聊</div>
+  <p class="card-summary">文｜周鑫雨 编辑｜张雨忻 打开“观猹”，能看到一个完全不同于机构投资榜单所呈现出来的AI创业生态： 这里很少有动辄估值几亿美金的项目，活跃在社区中的，也常常不是有着名校、大厂背景的创业者，更多是普通的设计师、产品经理，甚至退休教师。 观猹。 “观猹”创始人仲泰告诉我：“这才是AI行业最真实的生态。” 仲泰，一个在AI创业者和开发者群体中并不陌生的名字。这名02年出生、带着黑框眼镜的瘦高男生，“创龄”已高达6年——高三做试题交流平台，大一做考题答疑社群；到2023年，他在AI风口，成立了科技自媒体“特工宇宙”。 仲泰。 而2025年7月上线的AI产品测评社区平台“观猹”，是他投入最大的一次创业。</p>
+</a>
+<a href="https://developers.cloudflare.com/flagship/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Hacker News (Best)</span>
+    
+    <span>05/26 23:36</span>
+  </div>
+  <div class="card-title">Cloudflare Flagship</div>
+  <p class="card-summary">Article URL: https://developers.cloudflare.com/flagship/ Comments URL: https://news.ycombinator.com/item?id=48287468 Points: 343 # Comments: 169</p>
+</a>
+<a href="https://9to5mac.com/2026/05/26/apple-working-on-iphone-anti-snatching-feature-that-locks-the-device-automatically/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>05/26 23:29</span>
+  </div>
+  <div class="card-title">Apple working on iPhone anti-snatching feature that locks the device automatically</div>
+  <p class="card-summary">Apple is working on a new iPhone security feature that can automatically lock the device when it detects that it has been snatched from the user’s hand. Here are the details. more…</p>
+</a>
+<a href="https://9to5mac.com/2026/05/26/apple-rolling-out-new-airtag-2-firmware-update/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>05/26 23:26</span>
+  </div>
+  <div class="card-title">Apple rolling out new AirTag 2 firmware update</div>
+  <p class="card-summary">Up until today, Apple had released only a single firmware update for the AirTag 2 since its January launch. Now, a second firmware version is rolling out to owners of Apple’s tracking device. Here are the details. more…</p>
+</a>
+<a href="https://www.wired.com/story/pope-leo-schooled-the-tech-bros-on-tolkien/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>05/26 23:19</span>
+  </div>
+  <div class="card-title">Pope Leo Schooled the Tech Bros on Tolkien</div>
+  <p class="card-summary">The Holy Father referenced The Lord of the Rings in his encyclical about AI—an expert (if unintentional) troll of tech billionaires who keep misinterpreting the series.</p>
+</a>
+<a href="https://9to5mac.com/2026/05/26/apple-adds-new-cve-details-to-several-macos-ios-ipados-visionos-and-watchos-updates/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>05/26 22:14</span>
+  </div>
+  <div class="card-title">Apple adds new CVE details to several macOS, iOS, iPadOS, visionOS, and watchOS updates [U]</div>
+  <p class="card-summary">Apple today updated the security content pages for several macOS, iOS, iPadOS, visionOS, and watchOS releases, adding new CVE details for vulnerabilities addressed in each update. Here are the details. more…</p>
+</a>
+<a href="https://9to5mac.com/2026/05/26/duckduckgo-sees-iphone-installs-spike-in-the-us-following-ai-announcements-at-google-i-o/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>05/26 21:11</span>
+  </div>
+  <div class="card-title">DuckDuckGo sees iPhone installs spike in the US following AI announcements at Google I/O</div>
+  <p class="card-summary">Following the AI-heavy Search announcements at last week’s Google I/O, DuckDuckGo says it has seen a notable and sustained surge in U.S. users, including a sharp jump in iPhone app installs. Here are the details. more…</p>
+</a>
+<a href="https://9to5mac.com/2026/05/26/apple-wallets-new-digital-id-feature-just-added-more-ways-to-use-it/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>05/26 20:43</span>
+  </div>
+  <div class="card-title">Apple Wallet’s new Digital ID feature recently added more ways to use it</div>
+  <p class="card-summary">Last fall, Apple launched a new Digital ID feature in the Wallet app. Now, that feature can officially be used as an age verification method in several cases on iPhone. Here’s what that means. more…</p>
+</a>
+<a href="https://9to5mac.com/2026/05/26/iphone-18-pro-could-further-a-design-trend-ive-finally-come-around-on/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>05/26 20:37</span>
+  </div>
+  <div class="card-title">iPhone 18 Pro could further a design trend I’ve finally come around on</div>
+  <p class="card-summary">iPhone 18 Pro is coming this fall, and rumors indicate it will further a design trend started last year with iPhone 17 Pro: making the iPhone even thicker. Here’s why I’m actually behind this decision despite previously opposing it. more…</p>
+</a>
+<a href="https://medium.com/@jakeorlowitz/wikipedia-is-doing-the-capitalist-thing-56a393232943" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Hacker News (Best)</span>
+    
+    <span>05/26 20:33</span>
+  </div>
+  <div class="card-title">Big tech's anti-labor playbook has come for Wikipedia</div>
+  <p class="card-summary">Article URL: https://medium.com/@jakeorlowitz/wikipedia-is-doing-the-capitalist-thing-56a393232943 Comments URL: https://news.ycombinator.com/item?id=48285592 Points: 557 # Comments: 337</p>
+</a>
+<a href="https://9to5mac.com/2026/05/26/daily-may-26-2026/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>05/26 20:32</span>
+  </div>
+  <div class="card-title">9to5Mac Daily: May 26, 2026 – watchOS 27 rumors, more</div>
+  <p class="card-summary">Listen to a recap of the top stories of the day from 9to5Mac. 9to5Mac Daily is available on iTunes and Apple’s Podcasts app, Stitcher, TuneIn, Google Play, or through our dedicated RSS feed for Overcast and other podcast players. Sponsored by CardPointers: The best way to maximize your credit card r</p>
+</a>
+<a href="https://www.wired.com/story/the-9-best-movies-to-stream-right-now/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>05/26 20:29</span>
+  </div>
+  <div class="card-title">The Best Movies to Stream This Month (May 2026)</div>
+  <p class="card-summary">Bugonia, Good Boy, and Send Help are among the films deserving of your eyeballs this month.</p>
+</a>
+<a href="https://9to5mac.com/2026/05/26/as-chinese-phone-market-reportedly-picks-up-steam-iphone-could-be-a-standout-winner/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>05/26 20:20</span>
+  </div>
+  <div class="card-title">As Chinese phone market reportedly picks up steam, iPhone could be a standout winner</div>
+  <p class="card-summary">The China ​Academy of Information ​and Communications Technology (CAICT) has released its latest report on mobile phone shipments in China, covering April as well as the first four months of 2026. Here are the details. more…</p>
+</a>
+<a href="https://www.wired.com/story/what-pope-leo-xivs-first-encyclical-says-about-the-power-of-ai/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>05/26 20:17</span>
+  </div>
+  <div class="card-title">What Pope Leo XIV’s First Encyclical Says About the Power of AI</div>
+  <p class="card-summary">In Magnifica Humanitas, the Pope decries the concentration of technological power in a few global players.</p>
+</a>
+<a href="https://www.oliverio.dev/blog/the-worst-job-interview-i-had" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Hacker News (Best)</span>
+    
+    <span>05/26 20:11</span>
+  </div>
+  <div class="card-title">The worst job interview I ever had</div>
+  <p class="card-summary">Article URL: https://www.oliverio.dev/blog/the-worst-job-interview-i-had Comments URL: https://news.ycombinator.com/item?id=48285344 Points: 624 # Comments: 520</p>
+</a>
+<a href="https://www.science.org/content/blog-post/methyl-methacrylate-tank" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Hacker News (Best)</span>
+    
+    <span>05/26 19:25</span>
+  </div>
+  <div class="card-title">That Methyl Methacrylate Tank</div>
+  <p class="card-summary">Article URL: https://www.science.org/content/blog-post/methyl-methacrylate-tank Comments URL: https://news.ycombinator.com/item?id=48284712 Points: 422 # Comments: 189</p>
+</a>
+<a href="https://thereader.mitpress.mit.edu/the-strange-melancholy-of-slaying-monsters/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Hacker News (Best)</span>
+    
+    <span>05/26 19:25</span>
+  </div>
+  <div class="card-title">The Melancholy of Slaying Monsters</div>
+  <p class="card-summary">Article URL: https://thereader.mitpress.mit.edu/the-strange-melancholy-of-slaying-monsters/ Comments URL: https://news.ycombinator.com/item?id=48284711 Points: 272 # Comments: 138</p>
+</a>
+<a href="https://9to5mac.com/2026/05/26/ios-26-6-adds-new-alert-when-you-try-blocking-too-many-contacts/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>05/26 18:56</span>
+  </div>
+  <div class="card-title">iOS 26.6 adds new alert when you try blocking too many contacts</div>
+  <p class="card-summary">iOS 26.6 beta 1 arrived today, and with iOS 27 right around the corner, it’s unsurprisingly very light on changes. But one difference was discovered by Aaron Perris: a new alert that appears in iOS 26.6 when you try to block one contact too many. more…</p>
+</a>
+<a href="https://9to5mac.com/2026/05/26/global-running-day-challenge-coming-to-apple-watch-next-week/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>05/26 18:34</span>
+  </div>
+  <div class="card-title">Global Running Day Challenge coming to Apple Watch next week</div>
+  <p class="card-summary">June is just around the corner, and with the new month comes the next Apple Watch fitness challenge. more…</p>
+</a>
+<a href="https://9to5mac.com/2026/05/26/apple-tvs-new-space-race-thriller-does-something-unique-first-reviews-here/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>05/26 18:13</span>
+  </div>
+  <div class="card-title">Apple TV’s new space-race thriller does something unique, first reviews here</div>
+  <p class="card-summary">Star City premieres on Apple TV this week, a spinoff of the space-race drama For All Mankind. Here’s what the first reviews for Star City are saying. more…</p>
+</a>
+<a href="https://www.wired.com/story/internet-in-iran-starts-to-return-after-3-month-blackout/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>05/26 17:31</span>
+  </div>
+  <div class="card-title">Internet Starts to Return in Iran After 3-Month Blackout</div>
+  <p class="card-summary">Some internet connectivity is returning in Iran after nearly 90 days offline, web monitoring groups say. But it isn’t clear if the reconnection is permanent.</p>
+</a>
+<a href="https://9to5mac.com/2026/05/26/ipados-26-6-beta-1-now-available-plus-watchos-26-6-tvos-26-6-more/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>05/26 17:10</span>
+  </div>
+  <div class="card-title">iPadOS 26.6 beta 1 now available, plus watchOS 26.6, tvOS 26.6, more</div>
+  <p class="card-summary">Apple has released a new wave of developer beta software today, including beta 1 for iPadOS 26.6, tvOS 26.6, watchOS 26.6, and more. more…</p>
+</a>
+<a href="https://9to5mac.com/2026/05/26/apple-releases-macos-26-6-developer-beta-1/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>05/26 17:07</span>
+  </div>
+  <div class="card-title">Apple releases macOS 26.6 developer beta 1</div>
+  <p class="card-summary">Following the release of mcOS 26.5 earlier this month, Apple has now kicked off the next wave of betas for macOS 26.6. Here are the details. more…</p>
+</a>
+<a href="https://9to5mac.com/2026/05/26/apple-releases-first-ios-26-6-beta-for-iphone/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">9to5Mac</span>
+    
+    <span>05/26 17:06</span>
+  </div>
+  <div class="card-title">Apple releases first iOS 26.6 beta for iPhone</div>
+  <p class="card-summary">Apple has released the first iOS 26.6 beta for developers. iOS 26.6 beta 1 arrives shortly after the official release of iOS 26.5 for iPhone. Apple highlighted 3 enhancements in iOS 26.5, including new wallpapers for your iPhone. more…</p>
+</a>
+<a href="https://www.wired.com/gallery/best-outdoor-security-cameras/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Wired</span>
+    
+    <span>05/26 16:42</span>
+  </div>
+  <div class="card-title">7 Best Outdoor Security Cameras (2026) After Testing Dozens</div>
+  <p class="card-summary">These weatherproof outdoor security cams keep a watchful eye on your property while you get on with life. Our list includes battery-powered cameras that need no subscription.</p>
+</a>
+<a href="https://ericturner.dev/posts/cost-of-home-ownership/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Hacker News (Best)</span>
+    
+    <span>05/26 16:04</span>
+  </div>
+  <div class="card-title">The real cost of owning a home</div>
+  <p class="card-summary">Article URL: https://ericturner.dev/posts/cost-of-home-ownership/ Comments URL: https://news.ycombinator.com/item?id=48281611 Points: 416 # Comments: 840</p>
+</a>
+<a href="https://www.reuters.com/business/world-at-work/uber-lyft-drivers-massachusetts-form-first-us-ride-share-union-2026-05-26/" target="_blank" rel="noopener" class="card">
+  <div class="card-meta">
+    <span class="card-source">Hacker News (Best)</span>
+    
+    <span>05/26 15:58</span>
+  </div>
+  <div class="card-title">Uber, Lyft drivers in Massachusetts form first US ride-share union</div>
+  <p class="card-summary">Article URL: https://www.reuters.com/business/world-at-work/uber-lyft-drivers-massachusetts-form-first-us-ride-share-union-2026-05-26/ Comments URL: https://news.ycombinator.com/item?id=48281509 Points: 292 # Comments: 204</p>
+</a>
+  </div>
+</section>
+
+    <footer class="footer">
+      <p>Daily Brief · Powered by Hermes Agent · Data from RSS/Atom feeds</p>
+      <p style="margin-top: 4px;">AI 御三家 = OpenAI · Anthropic · Google DeepMind</p>
+    </footer>
+  </div>
+
+  <script>
+    // Smooth scroll for nav pills
+    document.querySelectorAll('.nav-pill').forEach(pill => {
+      pill.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(pill.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+</body>
+</html>
